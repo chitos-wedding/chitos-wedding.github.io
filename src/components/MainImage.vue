@@ -1,5 +1,4 @@
 <template>
-  <div></div>
   <img :src="MainImage" class="main-image" />
 </template>
 
@@ -9,7 +8,6 @@ import MainImage from '@/assets/img/main.jpg'
 
 <style scoped>
 .main-image {
-  width: 44rem;
-  aspect-ratio: 1965/2976;
+  width: 100%;
 }
 </style>

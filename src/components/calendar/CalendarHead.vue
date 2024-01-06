@@ -14,7 +14,7 @@ const dayOfTheWeek = ['일', '월', '화', '수', '목', '금', '토']
   padding: 1rem;
 }
 .calendar-head {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 </style>

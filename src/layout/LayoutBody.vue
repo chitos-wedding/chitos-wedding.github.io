@@ -1,9 +1,14 @@
 <template>
   <div class="layout-body">
-    <TimelineItems />
-    <div class="title-wrapper">
-      <div class="title-item title-item-left">백서현</div>
-      <div class="title-item title-item-right">하승진</div>
+    <!-- <TheGallery /> -->
+    <KakaoMap />
+    <!-- <TimelineItems /> -->
+    <!-- <div class="title-wrapper"> -->
+    <div class="layout-body-title">
+      <!-- <div class="title-item title-item-left">백서현</div> -->
+      <div class="layout-body-title-item left">백서현</div>
+      <div class="layout-body-title-item right">하승진</div>
+      <!-- <div class="title-item title-item-right">하승진</div> -->
     </div>
     <MainImage />
     <!-- <div class="main-image-effect-wrapper">
@@ -22,34 +27,37 @@
 </template>
 
 <script setup>
+import { KakaoMap } from '@/components/map'
 import { TheCalendar } from '@/components/calendar'
-import { TimelineItems } from '@/components/timeline'
+// import { TimelineItems } from '@/components/timeline'
+// import { TheGallery } from '@/components/gallery'
 import MainImage from '@/components/MainImage.vue'
 </script>
 
 <style lang="scss" scoped>
 .layout-body {
+  max-width: 30rem;
   position: relative;
-}
-.title-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 2.5rem 2.5rem 0;
-  font-size: 1.6rem;
-  letter-spacing: 0.5rem;
   background-color: #fdfdfd;
-}
 
-.title-item {
-  font-size: 2.5rem;
-  padding: 1rem;
+  &-title {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 2.5rem 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.5rem;
 
-  &-left {
-    writing-mode: vertical-rl;
-  }
-  &-right {
-    writing-mode: vertical-lr;
-    margin-top: 2.5rem;
+    &-item {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+    .left {
+      writing-mode: vertical-rl;
+    }
+    .right {
+      writing-mode: vertical-lr;
+      margin-top: 2rem;
+    }
   }
 }
 .main-image-effect-wrapper {

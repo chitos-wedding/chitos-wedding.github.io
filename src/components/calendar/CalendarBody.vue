@@ -42,19 +42,18 @@ const showDate = (date) => (date > 0 && date <= lastDate ? date : '')
 <style lang="scss" scoped>
 .calendar-date {
   &-container {
-    width: 5rem;
-    height: 5rem;
+    // width: 5rem;
+    // height: 5rem;
   }
   &-text {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    font-size: 1.6rem;
+    // width: 100%;
+    // height: 100%;
+    font-size: 1.5rem;
     text-align: center;
-    /* border: 1px solid red; */
-    border-radius: 50%;
+    border-radius: 10%;
   }
   &-selected {
     background-color: #dab1b6;
