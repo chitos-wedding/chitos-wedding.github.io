@@ -1,5 +1,6 @@
 <template>
   <div class="layout-body">
+    <AccountInfo />
     <!-- <TheGallery /> -->
     <!-- <TimelineItems /> -->
     <!-- <div class="title-wrapper"> -->
@@ -32,6 +33,7 @@
 <script setup>
 import { KakaoMap, MapLink } from '@/components/map'
 import { TheCalendar } from '@/components/calendar'
+import { AccountInfo } from '@/components/info'
 // import { TimelineItems } from '@/components/timeline'
 // import { TheGallery } from '@/components/gallery'
 import MainImage from '@/components/MainImage.vue'

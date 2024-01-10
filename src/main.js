@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { Quasar } from 'quasar'
+import { Quasar, Notify } from 'quasar'
 
 // Import icon libraries
 import '@quasar/extras/roboto-font/roboto-font.css'
@@ -13,4 +13,10 @@ import App from './App.vue'
 
 import '@/assets/base.css'
 
-createApp(App).use(Quasar).mount('#app')
+createApp(App)
+  .use(Quasar, {
+    plugins: {
+      Notify,
+    },
+  })
+  .mount('#app')
