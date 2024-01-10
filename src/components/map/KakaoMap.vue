@@ -1,6 +1,6 @@
 <template>
   <div
-    id="daumRoughmapContainer1704895564119"
+    id="daumRoughmapContainer1704897356218"
     class="root_daum_roughmap root_daum_roughmap_landing"
     style="width: 100%"
   />
@@ -10,8 +10,8 @@
 const executeScript = () => {
   const scriptTag = document.createElement('script')
   const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1704895564119",
-    "key" : "2hnza",
+    "timestamp" : "1704897356218",
+    "key" : "2hnzf",
     "mapHeight" : "360"
   }).render();`)
   scriptTag.appendChild(inlineScript)
