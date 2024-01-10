@@ -15,7 +15,7 @@ const clickTmap = () => {
   window.open('https://map.naver.com/p/entry/place/1271639035?c=15.00,0,0,0,dh', '_blank')
 }
 const clickKakao = () => {
-  window.open('https://map.naver.com/p/entry/place/1271639035?c=15.00,0,0,0,dh', '_blank')
+  window.open('https://kko.to/8vDiyEQnAJ', '_blank')
 }
 </script>
 <style lang="scss" scoped>
