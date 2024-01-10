@@ -1,7 +1,6 @@
 <template>
   <div class="layout-body">
     <!-- <TheGallery /> -->
-    <KakaoMap />
     <!-- <TimelineItems /> -->
     <!-- <div class="title-wrapper"> -->
     <div class="layout-body-title">
@@ -11,6 +10,10 @@
       <!-- <div class="title-item title-item-right">하승진</div> -->
     </div>
     <MainImage />
+    <div class="layout-body-map">
+      <KakaoMap />
+      <MapLink />
+    </div>
     <!-- <div class="main-image-effect-wrapper">
       <img
         class="main-image-effect"
@@ -27,7 +30,7 @@
 </template>
 
 <script setup>
-import { KakaoMap } from '@/components/map'
+import { KakaoMap, MapLink } from '@/components/map'
 import { TheCalendar } from '@/components/calendar'
 // import { TimelineItems } from '@/components/timeline'
 // import { TheGallery } from '@/components/gallery'

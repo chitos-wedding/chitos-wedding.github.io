@@ -1,20 +1,17 @@
 <template>
   <div
-    id="daumRoughmapContainer1704295031468"
+    id="daumRoughmapContainer1704895564119"
     class="root_daum_roughmap root_daum_roughmap_landing"
     style="width: 100%"
   />
-  <MapLink />
 </template>
 
 <script setup>
-import { MapLink } from '.'
-
 const executeScript = () => {
   const scriptTag = document.createElement('script')
   const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1704295031468",
-    "key" : "2hitt",
+    "timestamp" : "1704895564119",
+    "key" : "2hnza",
     "mapHeight" : "360"
   }).render();`)
   scriptTag.appendChild(inlineScript)
