@@ -1,10 +1,14 @@
 <template>
   <tr v-for="(week, weekIdx) in numberOfWeek" :key="week">
-    <td v-for="weekDay in 7" :key="weekDay">
+    <td v-for="(weekDay, weekDayIdx) in 7" :key="weekDay">
       <div class="calendar-date-container">
         <div
           class="calendar-date-text"
-          :class="{ 'calendar-date-selected': date === showDate(weekIdx * 7 + weekDay - firstDay) }"
+          :class="{
+            'calendar-date-selected': date === showDate(weekIdx * 7 + weekDay - firstDay),
+            'calendar-date-sun': weekDayIdx === 0,
+            'calendar-date-sat': weekDayIdx === 6,
+          }"
           v-text="showDate(weekIdx * 7 + weekDay - firstDay)"
         />
       </div>
@@ -49,14 +53,18 @@ const showDate = (date) => (date > 0 && date <= lastDate ? date : '')
     display: flex;
     justify-content: center;
     align-items: center;
-    // width: 100%;
-    // height: 100%;
-    font-size: 1.5rem;
     text-align: center;
-    border-radius: 10%;
+    border-radius: 50%;
+    padding: 1rem;
   }
   &-selected {
     background-color: #dab1b6;
+  }
+  &-sat {
+    color: blue;
+  }
+  &-sun {
+    color: red;
   }
 }
 </style>

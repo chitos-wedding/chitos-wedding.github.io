@@ -1,9 +1,9 @@
 <template>
   <div class="link-button-group">
-    <q-btn-group spread>
-      <q-btn no-wrap label="네이버지도" icon="img:icon/naver_map.png" @click="clickNaver" />
-      <q-btn no-wrap label="티맵" icon="img:icon/t_map.png" @click="clickTmap" />
-      <q-btn no-wrap label="카카오맵" icon="img:icon/kakao_map.png" @click="clickKakao" />
+    <q-btn-group spread unelevated>
+      <q-btn label="네이버지도" icon="img:icon/naver_map.png" @click="clickNaver" />
+      <q-btn label="티맵" icon="img:icon/t_map.png" @click="clickTmap" />
+      <q-btn label="카카오맵" icon="img:icon/kakao_map.png" @click="clickKakao" />
     </q-btn-group>
   </div>
 </template>
@@ -20,7 +20,8 @@ const clickKakao = () => {
 </script>
 <style lang="scss" scoped>
 .link-button-group {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
+  margin: 1rem 0;
 }
 </style>

@@ -50,7 +50,7 @@ const getRemainDayText = () => {
 <style lang="scss" scoped>
 .calendar {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   &-month {
     padding-bottom: 1rem;
@@ -62,8 +62,8 @@ const getRemainDayText = () => {
     padding: 2rem 0;
     :deep(span) {
       color: #d08c95;
-      font-size: 1.6rem;
-      font-weight: 800;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
   }
 }
