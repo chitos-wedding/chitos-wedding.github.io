@@ -3,6 +3,7 @@
     <!-- <TheGallery /> -->
     <!-- <TimelineItems /> -->
     <!-- <div class="title-wrapper"> -->
+    <q-btn @click="test">asdfasdf</q-btn>
     <div class="layout-body-title">
       <!-- <div class="title-item title-item-left">백서현</div> -->
       <div class="layout-body-title-item left">백서현</div>
@@ -29,6 +30,10 @@ import { AccountInfo, HallInfo, MapInfo } from '@/components/info'
 // import { TimelineItems } from '@/components/timeline'
 // import { TheGallery } from '@/components/gallery'
 import MainImage from '@/components/MainImage.vue'
+
+const test = () => {
+  window.open('http://naver.me/xRPff5UI', '_blank')
+}
 </script>
 
 <style lang="scss" scoped>
