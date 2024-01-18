@@ -9,5 +9,6 @@ import MainImage from '@/assets/img/main.jpg'
 <style scoped>
 .main-image {
   width: 100%;
+  padding: 0 1rem;
 }
 </style>

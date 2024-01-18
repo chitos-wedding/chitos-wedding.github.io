@@ -1,9 +1,7 @@
 <template>
   <div class="account-info">
-    <div class="account-info-title text-bold text-center">마음 전하실 곳</div>
-    <div class="account-info-divider">
-      <hr class="account-info-divider-line" />
-    </div>
+    <div class="title text-bold text-center">마음 전하실 곳</div>
+    <div class="divider" />
     <div class="account-info-message">
       <p>참석이 어려워 직접 축하를 전하지 못하는</p>
       <p>분들을 위해 계좌번호를 기재하였습니다.</p>
@@ -15,7 +13,7 @@
         <q-expansion-item :label="item.headerText">
           <q-card>
             <q-card-section>
-              <div class="account-info-item-title">{{ `${item.headerText} ${item.name}` }}</div>
+              <div>{{ `${item.headerText} ${item.name}` }}</div>
               <div class="account-info-item-content">
                 <div class="account-info-item-content-text">
                   {{ `${item.bankName} ${item.accountNumber}` }}
@@ -65,27 +63,15 @@ const copyClipboard = (text) => {
 </script>
 <style lang="scss" scoped>
 .account-info {
-  &-title {
-    font-size: 1.25rem;
-    padding: 1rem 0;
-  }
-
-  &-divider {
-    color: $grey-6;
-    padding: 0 1rem;
-
-    &-line {
-      border-top: 1px dotted;
-    }
-  }
-
   &-message {
     padding: 1rem;
   }
 
+  &-items {
+    padding: 1rem;
+  }
+
   &-item {
-    &-title {
-    }
     &-content {
       display: flex;
       align-items: center;

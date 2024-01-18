@@ -11,7 +11,7 @@ import 'quasar/src/css/index.sass'
 
 import App from './App.vue'
 
-import '@/assets/base.css'
+import '@/assets/base.scss'
 
 createApp(App)
   .use(Quasar, {
