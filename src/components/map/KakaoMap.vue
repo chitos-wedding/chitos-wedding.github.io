@@ -1,18 +1,20 @@
 <template>
-  <div
-    id="daumRoughmapContainer1704897356218"
-    class="root_daum_roughmap root_daum_roughmap_landing"
-    style="width: 100%"
-  />
+  <div class="kakao-map">
+    <div
+      id="daumRoughmapContainer1705587233002"
+      class="root_daum_roughmap root_daum_roughmap_landing"
+    />
+  </div>
 </template>
 
 <script setup>
 const executeScript = () => {
   const scriptTag = document.createElement('script')
   const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1704897356218",
-    "key" : "2hnzf",
-    "mapHeight" : "360"
+    "timestamp" : "1705587233002",
+    "key" : "2hqer",
+    "mapWidth": "360",
+    "mapHeight" : "240"
   }).render();`)
   scriptTag.appendChild(inlineScript)
   document.body.appendChild(scriptTag)
@@ -41,3 +43,9 @@ const installScript = () => {
 }
 installScript()
 </script>
+<style lang="scss" scoped>
+.kakao-map {
+  display: flex;
+  justify-content: center;
+}
+</style>
