@@ -11,6 +11,7 @@
     </div>
     <MainImage />
     <HallInfo />
+    <PoemInfo />
     <MapInfo />
     <TheCalendar :year="2024" :month="4" :date="6" />
     <AccountInfo />
@@ -27,7 +28,7 @@
 
 <script setup>
 import { TheCalendar } from '@/components/calendar'
-import { AccountInfo, DriveInfo, HallInfo, MapInfo } from '@/components/info'
+import { AccountInfo, DriveInfo, HallInfo, MapInfo, PoemInfo } from '@/components/info'
 // import { TimelineItems } from '@/components/timeline'
 // import { TheGallery } from '@/components/gallery'
 import { GuestBook } from '@/components/guestbook'
