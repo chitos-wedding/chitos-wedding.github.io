@@ -1,7 +1,7 @@
 <template>
   <div class="layout-body">
     <!-- <TheGallery /> -->
-    <!-- <TimelineItems /> -->
+    <TimelineItems />
     <!-- <div class="title-wrapper"> -->
     <div class="layout-body-title">
       <!-- <div class="title-item title-item-left">백서현</div> -->
@@ -30,7 +30,7 @@
 <script setup>
 import { TheCalendar } from '@/components/calendar'
 import { AccountInfo, DriveInfo, HallInfo, MapInfo, PoemInfo, WelcomeInfo } from '@/components/info'
-// import { TimelineItems } from '@/components/timeline'
+import { TimelineItems } from '@/components/timeline'
 // import { TheGallery } from '@/components/gallery'
 import { GuestBook } from '@/components/guestbook'
 import MainImage from '@/components/MainImage.vue'
