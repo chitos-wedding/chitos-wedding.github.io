@@ -3,10 +3,10 @@
     <div class="title text-bold text-center">마음 전하실 곳</div>
     <div class="divider" />
     <div class="account-info-message">
-      <p>참석이 어려워 직접 축하를 전하지 못하는</p>
-      <p>분들을 위해 계좌번호를 기재하였습니다.</p>
-      <p>전해주시는 진심은 소중하게 간직하여</p>
-      <p>좋은 부부의 모습으로 보답하겠습니다.</p>
+      <div>참석이 어려워 직접 축하를 전하지 못하는</div>
+      <div>분들을 위해 계좌번호를 기재하였습니다.</div>
+      <div>전해주시는 진심은 소중하게 간직하여</div>
+      <div>좋은 부부의 모습으로 보답하겠습니다.</div>
     </div>
     <div class="account-info-items q-gutter-sm">
       <q-list v-for="(item, idx) in items" bordered class="rounded-borders" :key="idx">
@@ -63,8 +63,11 @@ const copyClipboard = (text) => {
 </script>
 <style lang="scss" scoped>
 .account-info {
+  padding: 0 3rem;
   &-message {
     padding: 1rem;
+    text-align: center;
+    line-height: 1.7rem;
   }
 
   &-items {
