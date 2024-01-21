@@ -42,7 +42,7 @@ import MainImage from '@/components/MainImage.vue'
   flex-direction: column;
   max-width: 30rem;
   background-color: #fdfdfd;
-  padding: 0 3rem;
+  // padding: 0 3rem;
 
   &-title {
     display: flex;
