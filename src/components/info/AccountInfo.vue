@@ -63,7 +63,7 @@ const copyClipboard = (text) => {
 </script>
 <style lang="scss" scoped>
 .account-info {
-  padding: 0 3rem;
+  margin: 0 3rem;
   &-message {
     padding: 1rem;
     text-align: center;
