@@ -12,7 +12,5 @@ import { LayoutBody } from '.'
 .layout-main {
   display: flex;
   justify-content: center;
-  // margin-left: auto;
-  // margin-right: auto;
 }
 </style>
