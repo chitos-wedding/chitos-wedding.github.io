@@ -38,6 +38,7 @@ import MainImage from '@/components/MainImage.vue'
 .layout-body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 30rem;
   background-color: #fdfdfd;
   padding: 0 3rem;
