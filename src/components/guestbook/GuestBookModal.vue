@@ -63,7 +63,7 @@ const gb = ref({
 })
 
 const isTyped = computed(() => !!gb.value.name || !!gb.value.message)
-const isEmpty = computed(() => gb.value.name && gb.value.message)
+const isEmpty = computed(() => !gb.value.name || !gb.value.message)
 
 const open = () => (dialog.value = true)
 const close = () => (dialog.value = false)
