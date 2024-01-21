@@ -4,58 +4,53 @@
     <div class="divider"></div>
     <div class="guestbook-button" @click="openModal">글쓰기</div>
     <div class="guestbook-list">
-      <div class="guestbook-item" v-for="item of items" :key="item.createdBy">
-        <div class="guestbook-item-image"></div>
+      <div class="guestbook-item" v-for="(item, idx) of items" :key="idx">
+        <div class="guestbook-item-image-wrapper">
+          <img class="guestbook-item-image" :src="item.image ?? defaultImage" />
+        </div>
         <div class="guestbook-item-content">
           <div class="guestbook-item-header">
             <div class="guestbook-item-date">{{ item.createdDt }}</div>
-            <div class="guestbook-item-creator">{{ item.createdBy }}</div>
-            <!-- <q-separator vertical spaced inset /> -->
+            <div class="guestbook-item-creator">{{ item.name }}</div>
           </div>
           <div class="guestbook-item-message">{{ item.message }}</div>
         </div>
       </div>
     </div>
-    <GuestBookModal ref="guestBookModalRef" />
+    <GuestBookModal ref="guestBookModalRef" @update="loadList" />
   </div>
 </template>
 <script setup>
 import { ref } from 'vue'
+import { date } from 'quasar'
+import { collection, query, orderBy, getDocs } from 'firebase/firestore'
+import { db } from '@/plugins/firebase'
 import { GuestBookModal } from '.'
+import defaultImage from '@/assets/img/default.png'
+
+const commentsRef = collection(db, 'comments')
+const items = ref([])
 const guestBookModalRef = ref(null)
+
 const openModal = () => guestBookModalRef.value.open()
-const items = [
-  {
-    title: 'aaaaaaaaaaaaaaaa',
-    message: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaaaa\ndffdf',
-    createdDt: '2024-01-17',
-    createdBy: '유니',
-  },
-  {
-    title: 'bbbbbbbbbbbbbbbbbbb',
-    message: 'lkasjdhad a;sdas[d[a;askhasd7\nsajksahdas907dy ^as8d sa6d8 \nd8s90asd',
-    createdDt: '2024-01-17',
-    createdBy: '짜장 짜장짜장 짜장 짜장 짜장 짜장 짜장 짜장짜장 짜장',
-  },
-  {
-    title: 'cccccccccccccccccc',
-    message: 'dasjlsakd as89dasd lk98asd08duasj \nald8ads asdljkasdas8das d0 \ndffdf',
-    createdDt: '2024-01-17',
-    createdBy: '짬뽕',
-  },
-  {
-    title: 'dddddddddddddddddddd',
-    message: 'sfhflsdhfkjsdhfksdjhf\nlfu0sd fsdflsdjflsda jfasld;0xcvjs odf\naksdjasldj',
-    createdDt: '2024-01-17',
-    createdBy: '치치는 거꾸로해도 치치',
-  },
-  {
-    title: 'eeeeeeeeeeeeeeeee',
-    message: 'ffffffasdfasdfsdafsdafsdf\nldafkjslad; fksdaf \nasku8saslk12',
-    createdDt: '2024-01-17',
-    createdBy: '유니',
-  },
-]
+
+const convertTimeStamp = (timestamp) => {
+  return date.formatDate(timestamp.toDate(), 'YYYY-MM-DD HH:mm')
+}
+
+const loadList = async () => {
+  const q = query(commentsRef, orderBy('createdDt', 'desc'))
+  const comments = await getDocs(q)
+  items.value = comments.docs.map((comment) => {
+    const data = comment.data()
+    return {
+      ...data,
+      createdDt: convertTimeStamp(data.createdDt),
+    }
+  })
+}
+
+loadList()
 </script>
 <style lang="scss" scoped>
 * {
@@ -89,8 +84,9 @@ const items = [
     display: flex;
     flex-direction: column;
     gap: 0.2em;
-    height: 30em;
+    max-height: 30em;
     overflow-y: scroll;
+    padding-bottom: 0.1rem;
   }
 
   &-item {
@@ -104,10 +100,17 @@ const items = [
     // min-height: 20em;
     // overflow: scroll;
 
+    &-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     &-image {
       flex: 0 0 auto;
       width: 6em;
-      height: 30px;
+      height: 6em;
+      object-fit: contain;
     }
     &-content {
       margin-left: 0.5em;
