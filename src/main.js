@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { Quasar, Notify } from 'quasar'
+import './plugins/firebase'
 
 // Import icon libraries
 import '@quasar/extras/roboto-font/roboto-font.css'
