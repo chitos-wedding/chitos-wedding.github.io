@@ -1,6 +1,6 @@
 <template>
   <div class="layout-body">
-    <TheGallery />
+    <!-- <TheGallery /> -->
     <!-- <TimelineItems /> -->
     <!-- <div class="title-wrapper"> -->
     <div class="layout-body-title">
@@ -29,15 +29,16 @@
 import { TheCalendar } from '@/components/calendar'
 import { AccountInfo, DriveInfo, HallInfo, MapInfo } from '@/components/info'
 // import { TimelineItems } from '@/components/timeline'
-import { TheGallery } from '@/components/gallery'
+// import { TheGallery } from '@/components/gallery'
 import { GuestBook } from '@/components/guestbook'
 import MainImage from '@/components/MainImage.vue'
 </script>
 
 <style lang="scss" scoped>
 .layout-body {
+  display: flex;
+  flex-direction: column;
   max-width: 30rem;
-  position: relative;
   background-color: #fdfdfd;
   padding: 0 3rem;
 
