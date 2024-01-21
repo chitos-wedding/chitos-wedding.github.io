@@ -12,6 +12,7 @@
     <MainImage />
     <HallInfo />
     <PoemInfo />
+    <WelcomeInfo />
     <MapInfo />
     <TheCalendar :year="2024" :month="4" :date="6" />
     <AccountInfo />
@@ -28,7 +29,7 @@
 
 <script setup>
 import { TheCalendar } from '@/components/calendar'
-import { AccountInfo, DriveInfo, HallInfo, MapInfo, PoemInfo } from '@/components/info'
+import { AccountInfo, DriveInfo, HallInfo, MapInfo, PoemInfo, WelcomeInfo } from '@/components/info'
 // import { TimelineItems } from '@/components/timeline'
 // import { TheGallery } from '@/components/gallery'
 import { GuestBook } from '@/components/guestbook'
@@ -39,7 +40,6 @@ import MainImage from '@/components/MainImage.vue'
 .layout-body {
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: 30rem;
   background-color: #fdfdfd;
   padding: 0 3rem;
