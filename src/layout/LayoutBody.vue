@@ -11,6 +11,7 @@
     <FamilyInfo />
     <MapInfo />
     <TheCalendar :year="2024" :month="4" :date="6" />
+    <WeddingInfo />
     <AccountInfo />
     <GuestBook />
     <DriveInfo />
@@ -33,6 +34,7 @@ import {
   MapInfo,
   PoemInfo,
   TitleInfo,
+  WeddingInfo,
   WelcomeInfo,
 } from '@/components/info'
 import { TimelineItems } from '@/components/timeline'
