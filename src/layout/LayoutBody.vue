@@ -1,8 +1,6 @@
 <template>
   <div class="layout-body">
     <!-- <TheGallery /> -->
-    <TimelineItems />
-    <!-- <div class="title-wrapper"> -->
     <TitleInfo />
     <MainImage />
     <HallInfo />
@@ -13,6 +11,7 @@
     <MapInfo />
     <TheCalendar :year="2024" :month="4" :date="6" />
     <WeddingInfo />
+    <TimelineItems />
     <AccountInfo />
     <GuestBook />
     <DriveInfo />
