@@ -15,12 +15,13 @@
         transition-next="jump-left"
         v-model="slide"
       >
-        <q-carousel-slide name="text1" style="padding-top: 0">
-          <img class="contents" :src="defaultImage" />
-          <div class="image-wrapper" />
-        </q-carousel-slide>
-        <q-carousel-slide name="text2" style="padding-top: 0">
-          <img class="contents" :src="mainImage" />
+        <q-carousel-slide
+          v-for="(image, idx) in images"
+          :name="`${image}-${idx}`"
+          style="padding-top: 0"
+          :key="image"
+        >
+          <img class="contents" :src="getImage(image)" />
           <div class="image-wrapper" />
         </q-carousel-slide>
         <template #navigation-icon="{ active, onClick }">
@@ -32,13 +33,21 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import defaultImage from '@/assets/img/default.png'
-import mainImage from '@/assets/img/main.jpg'
 
 const dialog = ref(false)
-const slide = ref('text1')
+const slide = ref('')
 
-const open = () => (dialog.value = true)
+const images = ref([])
+
+const getImage = (fileName) => {
+  return new URL(`/src/assets/img/${fileName || 'default.png'}`, import.meta.url).href
+}
+
+const open = (items) => {
+  images.value = items
+  slide.value = `${images.value[0]}-0`
+  dialog.value = true
+}
 const close = () => (dialog.value = false)
 
 defineExpose({ open, close })
@@ -67,7 +76,6 @@ defineExpose({ open, close })
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(red, 10%);
   }
 }
 .navigation-item {
