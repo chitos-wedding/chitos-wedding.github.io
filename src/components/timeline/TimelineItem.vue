@@ -4,7 +4,7 @@
     <div class="timeline-item-content">
       <div class="timeline-item-content-time">{{ item.date }}</div>
       <div class="timeline-item-content-post">
-        <img class="timeline-item-content-post-image" :src="defaultImage" alt="default" />
+        <img class="timeline-item-content-post-image" :src="getImage(item.image)" />
         <div class="timeline-item-content-post-body">
           <div class="timeline-item-content-post-body-text">{{ item.text }}</div>
           <div class="timeline-item-content-post-body-select" @click="openModal">
@@ -18,7 +18,6 @@
 </template>
 <script setup>
 import { ref, toRefs } from 'vue'
-import defaultImage from '@/assets/img/default.png'
 import { TimelineItemModal } from '.'
 const props = defineProps({
   item: {
@@ -29,7 +28,11 @@ const props = defineProps({
 const { item } = toRefs(props)
 const TimelineItemModalRef = ref(null)
 
-const openModal = () => TimelineItemModalRef.value.open()
+const getImage = (fileName) => {
+  return new URL(`/src/assets/img/${fileName || 'default.png'}`, import.meta.url).href
+}
+
+const openModal = () => TimelineItemModalRef.value.open(item.value.images)
 </script>
 <style lang="scss" scoped>
 .timeline-item {
@@ -48,7 +51,6 @@ const openModal = () => TimelineItemModalRef.value.open()
   padding: 1rem;
 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
   background-color: #fff;
 
   &::after {
@@ -85,9 +87,10 @@ const openModal = () => TimelineItemModalRef.value.open()
     &-image {
       width: 6rem;
       height: 6rem;
-
+      flex: 0 0 auto;
       object-fit: contain;
       border-radius: 0.5rem;
+      background-color: $grey-2;
     }
 
     &-body {
