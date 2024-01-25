@@ -27,10 +27,11 @@ const messages = [
 </script>
 <style lang="scss" scoped>
 .poem {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  padding: 2rem 7rem;
 
   &-image {
     padding-bottom: 2rem;
@@ -43,7 +44,8 @@ const messages = [
 
   &-line {
     color: $grey-8;
-    font-size: 1.3rem;
+    font-size: 2rem;
+    font-family: 'Nanum Pen Script', cursive;
 
     border-bottom: 1px solid $grey-3;
 
