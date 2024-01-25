@@ -1,5 +1,10 @@
 <template>
-  <q-dialog :persistent="isTyped" v-model="dialog" @update:model-value="dialogChanged">
+  <q-dialog
+    ref="qDialogRef"
+    :persistent="isTyped"
+    v-model="dialog"
+    @update:model-value="dialogChanged"
+  >
     <q-card style="width: 100%">
       <q-card-section>
         <div class="text-h6">방명록 남기기</div>
@@ -48,13 +53,16 @@
 </template>
 <script setup>
 import { ref, computed } from 'vue'
+import { useQuasar } from 'quasar'
 import { addDoc } from 'firebase/firestore'
 import { uploadBytes, getDownloadURL } from 'firebase/storage'
 import { getCollectionRef, getStorageRef } from '@/plugins/firebase'
 
 const emit = defineEmits(['update'])
+const q = useQuasar()
 
 const commentsRef = getCollectionRef('comments')
+const qDialogRef = ref(null)
 const dialog = ref(false)
 const gb = ref({
   image: null,
@@ -65,8 +73,8 @@ const gb = ref({
 const isTyped = computed(() => !!gb.value.name || !!gb.value.message)
 const isEmpty = computed(() => !gb.value.name || !gb.value.message)
 
-const open = () => (dialog.value = true)
-const close = () => (dialog.value = false)
+const open = () => qDialogRef.value.show()
+const close = () => qDialogRef.value.hide()
 const dialogChanged = () => {
   gb.value = {
     image: null,
@@ -76,21 +84,25 @@ const dialogChanged = () => {
 }
 
 const saveMessage = async () => {
-  if (gb.value.image) {
-    const imageRef = getStorageRef(`images/${gb.value.image.name}`)
-    const result = await uploadBytes(imageRef, gb.value.image)
-    gb.value.imageUrl = await getDownloadURL(result.ref)
+  try {
+    q.loading.show()
+    if (gb.value.image) {
+      const imageRef = getStorageRef(`images/${gb.value.image.name}`)
+      const result = await uploadBytes(imageRef, gb.value.image)
+      gb.value.imageUrl = await getDownloadURL(result.ref)
+    }
+    const data = {
+      image: gb.value.imageUrl || null,
+      name: gb.value.name,
+      message: gb.value.message,
+      createdDt: new Date(),
+    }
+    await addDoc(commentsRef, data)
+    emit('update')
+    close()
+  } finally {
+    q.loading.hide()
   }
-  const data = {
-    image: gb.value.imageUrl || null,
-    name: gb.value.name,
-    message: gb.value.message,
-    createdDt: new Date(),
-  }
-  await addDoc(commentsRef, data)
-
-  emit('update')
-  close()
 }
 
 defineExpose({ open, close })
