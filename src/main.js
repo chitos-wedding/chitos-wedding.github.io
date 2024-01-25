@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { Quasar, Notify } from 'quasar'
+import { Quasar, Notify, Loading } from 'quasar'
 import './plugins/firebase'
 
 // Import icon libraries
@@ -18,6 +18,7 @@ createApp(App)
   .use(Quasar, {
     plugins: {
       Notify,
+      Loading,
     },
   })
   .mount('#app')
