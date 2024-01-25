@@ -3,12 +3,7 @@
     <!-- <TheGallery /> -->
     <TimelineItems />
     <!-- <div class="title-wrapper"> -->
-    <div class="layout-body-title">
-      <!-- <div class="title-item title-item-left">백서현</div> -->
-      <div class="layout-body-title-item left">백서현</div>
-      <div class="layout-body-title-item right">하승진</div>
-      <!-- <div class="title-item title-item-right">하승진</div> -->
-    </div>
+    <TitleInfo />
     <MainImage />
     <HallInfo />
     <PoemInfo />
@@ -29,7 +24,15 @@
 
 <script setup>
 import { TheCalendar } from '@/components/calendar'
-import { AccountInfo, DriveInfo, HallInfo, MapInfo, PoemInfo, WelcomeInfo } from '@/components/info'
+import {
+  AccountInfo,
+  DriveInfo,
+  HallInfo,
+  MapInfo,
+  PoemInfo,
+  TitleInfo,
+  WelcomeInfo,
+} from '@/components/info'
 import { TimelineItems } from '@/components/timeline'
 // import { TheGallery } from '@/components/gallery'
 import { GuestBook } from '@/components/guestbook'
@@ -42,26 +45,6 @@ import MainImage from '@/components/MainImage.vue'
   flex-direction: column;
   max-width: 40rem;
   background-color: #fdfdfd;
-
-  &-title {
-    display: flex;
-    justify-content: center;
-    padding: 2.5rem 2.5rem 0;
-    font-size: 1.6rem;
-    letter-spacing: 0.5rem;
-
-    &-item {
-      font-size: 2rem;
-      padding: 1rem;
-    }
-    .left {
-      writing-mode: vertical-rl;
-    }
-    .right {
-      writing-mode: vertical-lr;
-      margin-top: 2rem;
-    }
-  }
 }
 .main-image-effect-wrapper {
   position: absolute;
