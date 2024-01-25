@@ -8,6 +8,7 @@
     <HallInfo />
     <PoemInfo />
     <WelcomeInfo />
+    <FamilyInfo />
     <MapInfo />
     <TheCalendar :year="2024" :month="4" :date="6" />
     <AccountInfo />
@@ -27,6 +28,7 @@ import { TheCalendar } from '@/components/calendar'
 import {
   AccountInfo,
   DriveInfo,
+  FamilyInfo,
   HallInfo,
   MapInfo,
   PoemInfo,
