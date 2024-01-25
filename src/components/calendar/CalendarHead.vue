@@ -9,7 +9,7 @@
 <script setup>
 const dayOfTheWeek = ['일', '월', '화', '수', '목', '금', '토']
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .calendar-day-item {
   padding: 1rem;
 }

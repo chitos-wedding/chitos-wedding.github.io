@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-item">
+  <div class="timeline-item" :class="classes">
     <span class="circle" />
     <div class="timeline-item-content">
       <div class="timeline-item-content-time">{{ item.date }}</div>
@@ -13,20 +13,33 @@
         </div>
       </div>
     </div>
+    <TimelineItemModal ref="TimelineItemModalRef" />
   </div>
-  <TimelineItemModal ref="TimelineItemModalRef" />
 </template>
 <script setup>
-import { ref, toRefs } from 'vue'
+import { ref, toRefs, computed } from 'vue'
 import { TimelineItemModal } from '.'
 const props = defineProps({
   item: {
     type: Object,
-    default: () => {},
+    default: () => ({}),
+  },
+  first: {
+    type: Boolean,
+    default: false,
+  },
+  last: {
+    type: Boolean,
+    default: false,
   },
 })
 const { item } = toRefs(props)
 const TimelineItemModalRef = ref(null)
+
+const classes = computed(() => ({
+  'timeline-item-first': props.first,
+  'timeline-item-last': props.last,
+}))
 
 const getImage = (fileName) => {
   return new URL(`/src/assets/img/${fileName || 'default.png'}`, import.meta.url).href
@@ -39,7 +52,16 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
   display: flex;
   justify-content: flex-end;
   position: relative;
-  margin: 1rem 0;
+  padding: 1rem 0;
+
+  border-left: 0.3rem solid #e17b77;
+  // border-image: linear-gradient(to bottom, black 50%, transparent 50%) 1;
+  &-first {
+    border-image: linear-gradient(to bottom, transparent 50%, #e17b77 50%) 1;
+  }
+  &-last {
+    border-image: linear-gradient(to bottom, #e17b77 50%, transparent 50%) 1;
+  }
 }
 
 .timeline-item-content {
@@ -47,30 +69,23 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
   flex-direction: column;
   gap: 0.5rem;
   position: relative;
-  width: 90%;
+  width: 93%;
   padding: 1rem;
 
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   background-color: #fff;
 
   &::after {
     content: ' ';
     background-color: #fff;
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: -0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
     position: absolute;
-    left: -7.5px;
+    left: -0.75rem;
     right: auto;
-    top: calc(50% - 7.5px);
+    top: calc(50% - 0.75rem);
     transform: rotate(45deg);
-    width: 15px;
-    height: 15px;
-  }
-
-  & p {
-    font-size: 16px;
-    line-height: 24px;
-    margin: 15px 0;
-    max-width: 250px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   &-time {
@@ -82,11 +97,11 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
 
   &-post {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 
     &-image {
-      width: 6rem;
-      height: 6rem;
+      width: 7rem;
+      height: 7rem;
       flex: 0 0 auto;
       object-fit: contain;
       border-radius: 0.5rem;
@@ -101,6 +116,7 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
 
       &-text {
         padding: 0.5rem 0;
+        font-size: 1rem;
       }
 
       &-select {
@@ -120,13 +136,13 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
 .circle {
   position: absolute;
 
-  top: calc(50% - 0.75rem);
-  left: 0.5rem;
-  width: 20px;
-  height: 20px;
+  top: calc(50% - 1rem);
+  left: -1rem;
+  width: 2rem;
+  height: 2rem;
   z-index: 100;
 
-  border: 3px solid #e17b77;
+  border: 0.3rem solid #e17b77;
   border-radius: 50%;
   background-color: #fff;
 }

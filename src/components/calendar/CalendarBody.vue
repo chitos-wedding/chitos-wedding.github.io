@@ -11,6 +11,9 @@
           }"
           v-text="showDate(weekIdx * 7 + weekDay - firstDay)"
         />
+        <div v-if="date === showDate(weekIdx * 7 + weekDay - firstDay)" class="calendar-date-time">
+          17:00
+        </div>
       </div>
     </td>
   </tr>
@@ -46,25 +49,27 @@ const showDate = (date) => (date > 0 && date <= lastDate ? date : '')
 <style lang="scss" scoped>
 .calendar-date {
   &-container {
-    // width: 5rem;
-    // height: 5rem;
+    width: 4rem;
+    height: 4rem;
   }
   &-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     border-radius: 50%;
     padding: 1rem;
   }
-  &-selected {
-    background-color: #dab1b6;
-  }
   &-sat {
-    color: blue;
+    color: $blue-11;
   }
   &-sun {
-    color: red;
+    color: #d099a1;
+  }
+  &-selected {
+    background-color: #dab1b6;
+    color: white;
+  }
+  &-time {
+    color: #d099a1;
+    font-size: 1rem;
   }
 }
 </style>

@@ -53,9 +53,6 @@ const loadList = async () => {
 loadList()
 </script>
 <style lang="scss" scoped>
-* {
-  font-size: 14px;
-}
 .guestbook {
   padding: 0 1em;
 
@@ -70,7 +67,6 @@ loadList()
     font-size: 1em;
     font-weight: bold;
 
-    border: 1px solid unset;
     border-radius: 0.5em;
     background-color: $amber-3;
 
@@ -92,13 +88,10 @@ loadList()
   &-item {
     display: flex;
     padding: 0.5em 1em 0.8em;
-    border: 1px solid $grey-4; // REMOVE
+    border: 0.1rem solid $grey-4;
     border-radius: 0.5em;
     margin-right: 0.2em;
     background-color: rgba(white, 50%);
-    // max-height: 400px;
-    // min-height: 20em;
-    // overflow: scroll;
 
     &-image-wrapper {
       display: flex;

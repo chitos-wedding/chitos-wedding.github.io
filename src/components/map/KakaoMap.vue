@@ -3,6 +3,7 @@
     <div
       id="daumRoughmapContainer1705587233002"
       class="root_daum_roughmap root_daum_roughmap_landing"
+      style="width: 36rem"
     />
   </div>
 </template>
@@ -13,7 +14,6 @@ const executeScript = () => {
   const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
     "timestamp" : "1705587233002",
     "key" : "2hqer",
-    "mapWidth": "360",
     "mapHeight" : "240"
   }).render();`)
   scriptTag.appendChild(inlineScript)
@@ -21,7 +21,6 @@ const executeScript = () => {
 }
 
 const installScript = () => {
-  // original.src = 'https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js'
   const scriptTag = document.createElement('script')
   scriptTag.className = 'daum_roughmap_loader_script'
 

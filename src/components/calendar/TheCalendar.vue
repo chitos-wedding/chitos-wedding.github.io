@@ -53,13 +53,14 @@ const getRemainDayText = () => {
   font-size: 1.25rem;
 
   &-month {
-    padding-bottom: 1rem;
+    padding: 2rem 1rem 1rem;
+    font-weight: bold;
   }
   &-table {
     margin: auto;
   }
   &-remain {
-    padding: 2rem 0;
+    padding: 1rem 0;
     :deep(span) {
       color: #d08c95;
       font-size: 1.5rem;

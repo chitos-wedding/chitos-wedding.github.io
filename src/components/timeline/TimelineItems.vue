@@ -1,6 +1,12 @@
 <template>
   <div class="timeline-container">
-    <TimelineItem v-for="(item, idx) in items" :item="item" :key="idx" />
+    <TimelineItem
+      v-for="(item, idx) in items"
+      :item="item"
+      :key="idx"
+      :first="idx === 0"
+      :last="idx === items.length - 1"
+    />
   </div>
 </template>
 <script setup>
@@ -46,16 +52,6 @@ const items = [
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 40px 0;
-}
-
-.timeline-container::after {
-  content: '';
-  background-color: #e17b77;
-  position: absolute;
-  left: 1rem;
-  // width: 4px;
-  width: 0.2rem;
-  height: 100%;
+  padding: 3rem;
 }
 </style>

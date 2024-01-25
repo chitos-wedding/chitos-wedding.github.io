@@ -47,7 +47,7 @@ const messages = [
     font-size: 2rem;
     font-family: 'Nanum Pen Script', cursive;
 
-    border-bottom: 1px solid $grey-3;
+    border-bottom: 0.1rem solid $grey-3;
 
     white-space: pre-wrap;
     word-break: keep-all;
