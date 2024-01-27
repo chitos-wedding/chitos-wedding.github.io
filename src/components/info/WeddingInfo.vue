@@ -31,7 +31,9 @@
 
       <q-tab-panel :name="tabs[2].value">
         <div class="wedding-photo">
-          <img class="wedding-photo-image" :src="PhotoBooth" />
+          <q-intersection once transition="fade" transition-duration="1000">
+            <img class="wedding-photo-image" :src="PhotoBooth" />
+          </q-intersection>
           <div class="wedding-photo-message">
             <div class="wedding-photo-message-line">포토부스가 설치될 예정입니다.</div>
             <div class="wedding-photo-message-line">귀한 발걸음 해주신 여러분의</div>

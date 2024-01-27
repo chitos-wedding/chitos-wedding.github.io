@@ -1,9 +1,13 @@
 <template>
   <div ref="contentsRef" class="contents">
-    <img class="contents-image" :src="SeohyunImage" />
+    <q-intersection once transition="fade" transition-duration="1000">
+      <img class="contents-image" :src="SeohyunImage" />
+    </q-intersection>
     &
     <!-- <HeartIcon width="1.5rem" height="1.5rem" color="#d08c95" /> -->
-    <img class="contents-image" :src="SeungjinImage" />
+    <q-intersection once transition="fade" transition-duration="1000">
+      <img class="contents-image" :src="SeungjinImage" />
+    </q-intersection>
   </div>
 </template>
 <script setup>

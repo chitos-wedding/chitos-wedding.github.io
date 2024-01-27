@@ -4,7 +4,9 @@
     <div class="timeline-item-content">
       <div class="timeline-item-content-time">{{ item.date }}</div>
       <div class="timeline-item-content-post">
-        <img class="timeline-item-content-post-image" :src="getImage(item.image)" />
+        <q-intersection once transition="fade" transition-duration="1000">
+          <img class="timeline-item-content-post-image" :src="getImage(item.image)" />
+        </q-intersection>
         <div class="timeline-item-content-post-body">
           <div class="timeline-item-content-post-body-text">{{ item.text }}</div>
           <div class="timeline-item-content-post-body-select" @click="openModal">

@@ -6,7 +6,9 @@
     <div class="guestbook-list">
       <div class="guestbook-item" v-for="(item, idx) of items" :key="idx">
         <div class="guestbook-item-image-wrapper">
-          <img class="guestbook-item-image" :src="item.image ?? defaultImage" />
+          <q-intersection once transition="fade" transition-duration="1000">
+            <img class="guestbook-item-image" :src="item.image ?? defaultImage" />
+          </q-intersection>
         </div>
         <div class="guestbook-item-content">
           <div class="guestbook-item-header">

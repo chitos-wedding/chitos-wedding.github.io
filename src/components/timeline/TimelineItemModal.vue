@@ -21,7 +21,9 @@
           style="padding-top: 0"
           :key="image"
         >
-          <img class="contents" :src="getImage(image)" />
+          <q-intersection once transition="fade" transition-duration="1000">
+            <img class="contents" :src="getImage(image)" />
+          </q-intersection>
           <div class="image-wrapper" />
         </q-carousel-slide>
         <template #navigation-icon="{ active, onClick }">

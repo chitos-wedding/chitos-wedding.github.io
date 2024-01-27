@@ -1,11 +1,13 @@
 <template>
   <div class="poem">
     <div class="poem-image">
-      <img
-        class="poem-image-item"
-        src="https://cdn2.makedear.com/homepage/img/leaf.png"
-        alt="leaf"
-      />
+      <q-intersection once transition="fade" transition-duration="1000">
+        <img
+          class="poem-image-item"
+          src="https://cdn2.makedear.com/homepage/img/leaf.png"
+          alt="leaf"
+        />
+      </q-intersection>
     </div>
     <div class="poem-line" v-for="message in messages" :key="message">{{ message }}</div>
   </div>
