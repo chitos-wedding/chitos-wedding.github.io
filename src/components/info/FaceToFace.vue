@@ -1,30 +1,26 @@
 <template>
   <div ref="contentsRef" class="contents">
     <q-intersection once transition="fade" transition-duration="1000">
-      <img class="contents-image" :src="SeohyunImage" />
+      <img class="contents-image" :src="getImage('seohyun_solo.jpg')" />
     </q-intersection>
     &
     <!-- <HeartIcon width="1.5rem" height="1.5rem" color="#d08c95" /> -->
     <q-intersection once transition="fade" transition-duration="1000">
-      <img class="contents-image" :src="SeungjinImage" />
+      <img class="contents-image" :src="getImage('seungjin_solo.jpg')" />
     </q-intersection>
   </div>
 </template>
 <script setup>
 import { onMounted, ref } from 'vue'
-import SeohyunImage from '@/assets/img/seohyun_solo.jpg'
-import SeungjinImage from '@/assets/img/seungjin_solo.jpg'
 // import { HeartIcon } from '@/components/icons'
 
 const contentsRef = ref(null)
 // const targetImageRef = ref(null)
 
-// const getImage = (fileName) => {
-//   const url = new URL(`/src/assets/img/${fileName || 'default.png'}`, import.meta.url)
-//   console.log(url)
-//   console.log(url.href)
-//   return url.href
-// }
+const getImage = (fileName) => {
+  const url = new URL(`/src/assets/img/${fileName || 'default.png'}`, import.meta.url)
+  return url.href
+}
 
 // const resizeImage = (settings) => {
 //   const file = settings.file
