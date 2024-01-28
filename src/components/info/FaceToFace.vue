@@ -117,7 +117,7 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40rem;
+  width: 100%;
   height: 27.5rem;
   padding: 3rem;
 
@@ -126,9 +126,7 @@ onMounted(async () => {
   font-size: 1.5rem;
 
   &-image {
-    // flex: 0 0 auto;
-    // width: 15rem;
-    height: 21rem;
+    height: 20rem;
     object-fit: contain;
     border-radius: 1rem;
   }
