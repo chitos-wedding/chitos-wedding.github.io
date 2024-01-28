@@ -21,24 +21,30 @@
     </q-tabs>
     <q-tab-panels animated class="wedding-tab-content" v-model="selected">
       <q-tab-panel dark :name="tabs[0].value">
-        <div>인터불고 호텔 주차장: 제한 없음</div>
-        <div>* 자리 없을 시, 엑스코 주차장: 2시간 제한</div>
+        <div class="wedding-tab-content-item">
+          <div>인터불고 호텔 주차장: 제한 없음</div>
+          <div>* 자리 없을 시, 엑스코 주차장: 2시간 제한</div>
+        </div>
       </q-tab-panel>
 
       <q-tab-panel :name="tabs[1].value">
-        <div>식사는 지하 1층에서 하실 수 있습니다.</div>
+        <div class="wedding-tab-content-item">
+          <div>식사는 지하 1층에서 하실 수 있습니다.</div>
+        </div>
       </q-tab-panel>
 
       <q-tab-panel :name="tabs[2].value">
-        <div class="wedding-photo">
-          <q-intersection once transition="fade" transition-duration="1000">
-            <img class="wedding-photo-image" :src="PhotoBooth" />
-          </q-intersection>
-          <div class="wedding-photo-message">
-            <div class="wedding-photo-message-line">포토부스가 설치될 예정입니다.</div>
-            <div class="wedding-photo-message-line">귀한 발걸음 해주신 여러분의</div>
-            <div class="wedding-photo-message-line">환한 미소와 따뜻한 말씀 남겨주시면</div>
-            <div class="wedding-photo-message-line">소중히 간직하도록 하겠습니다.</div>
+        <div class="wedding-tab-content-item">
+          <div class="wedding-photo">
+            <q-intersection once transition="fade" transition-duration="1000">
+              <img class="wedding-photo-image" :src="PhotoBooth" />
+            </q-intersection>
+            <div class="wedding-photo-message">
+              <div class="wedding-photo-message-line">포토부스가 설치될 예정입니다.</div>
+              <div class="wedding-photo-message-line">귀한 발걸음 해주신 여러분의</div>
+              <div class="wedding-photo-message-line">환한 미소와 따뜻한 말씀 남겨주시면</div>
+              <div class="wedding-photo-message-line">소중히 간직하도록 하겠습니다.</div>
+            </div>
           </div>
         </div>
       </q-tab-panel>
@@ -87,6 +93,10 @@ const selected = ref(tabs[0].value)
       border: 0.1rem solid $grey-4;
       border-top: none;
       border-radius: 0 0 0.5rem 0.5rem;
+
+      &-item {
+        height: 35rem;
+      }
     }
   }
 
