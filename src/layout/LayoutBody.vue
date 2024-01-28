@@ -15,6 +15,7 @@
     <AccountInfo />
     <GuestBook />
     <DriveInfo />
+    <ShareInfo />
     <!-- <div class="main-image-effect-wrapper">
       <img
         class="main-image-effect"
@@ -34,6 +35,7 @@ import {
   HallInfo,
   MapInfo,
   PoemInfo,
+  ShareInfo,
   TitleInfo,
   WeddingInfo,
   WelcomeInfo,
