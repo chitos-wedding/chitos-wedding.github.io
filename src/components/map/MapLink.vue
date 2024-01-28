@@ -12,7 +12,7 @@ const clickNaver = () => {
   window.open('https://map.naver.com/p/entry/place/1271639035?c=15.00,0,0,0,dh', '_blank')
 }
 const clickTmap = () => {
-  window.open('https://map.naver.com/p/entry/place/1271639035?c=15.00,0,0,0,dh', '_blank')
+  window.open('tmap://search?name=그랑파티오 호텔인터불고엑스코', '_blank')
 }
 const clickKakao = () => {
   window.open('https://kko.to/8vDiyEQnAJ', '_blank')
@@ -22,6 +22,5 @@ const clickKakao = () => {
 .link-button-group {
   display: flex;
   justify-content: center;
-  padding: 1rem;
 }
 </style>
