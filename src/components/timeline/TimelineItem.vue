@@ -74,13 +74,15 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
   width: 93%;
   padding: 1rem;
 
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  border: 0.1rem solid $grey-4;
+  border-radius: 0.5rem;
   background-color: #fff;
 
   &::after {
     content: ' ';
     background-color: #fff;
-    box-shadow: -0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+    border-left: 0.1rem solid $grey-4;
+    border-bottom: 0.1rem solid $grey-4;
     position: absolute;
     left: -0.75rem;
     right: auto;
