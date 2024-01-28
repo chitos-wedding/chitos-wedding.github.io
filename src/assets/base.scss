@@ -35,3 +35,13 @@ html {
   background: $grey-6;
   border-radius: 0.5rem;
 }
+
+@font-face {
+  font-family: 'Noto Serif KR';
+  src: url('./fonts/NotoSerifKR-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Nanum Pen Script';
+  src: url('./fonts/NanumPenScript-Regular.ttf');
+}
