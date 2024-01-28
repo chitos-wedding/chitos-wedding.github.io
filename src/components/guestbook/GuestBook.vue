@@ -27,7 +27,7 @@ import { ref } from 'vue'
 import { date } from 'quasar'
 import { collection, query, orderBy, getDocs } from 'firebase/firestore'
 import { db } from '@/plugins/firebase'
-import { GuestBookModal } from '.'
+import GuestBookModal from './GuestBookModal.vue'
 import defaultImage from '@/assets/img/default.png'
 
 const commentsRef = collection(db, 'comments')

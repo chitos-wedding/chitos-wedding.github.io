@@ -1,8 +1,6 @@
 <template>
   <div class="main">
-    <q-intersection once transition="fade" transition-duration="1000">
-      <img class="main-image" :src="MainImage" />
-    </q-intersection>
+    <img class="main-image" :src="MainImage" />
   </div>
 </template>
 
@@ -12,6 +10,8 @@ import MainImage from '@/assets/img/main.jpg'
 
 <style lang="scss" scoped>
 .main {
+  width: 100%;
+  min-height: 30rem;
   &-image {
     width: 100%;
     padding: 0 4rem;
