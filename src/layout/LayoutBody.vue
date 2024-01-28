@@ -50,7 +50,7 @@ import MainImage from '@/components/MainImage.vue'
 .layout-body {
   display: flex;
   flex-direction: column;
-  max-width: 40rem;
+  max-width: 36rem;
   background-color: #fdfdfd;
 }
 .main-image-effect-wrapper {

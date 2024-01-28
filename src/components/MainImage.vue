@@ -12,9 +12,6 @@ import MainImage from '@/assets/img/main.jpg'
 
 <style lang="scss" scoped>
 .main {
-  width: 40rem;
-  height: 46rem;
-
   &-image {
     width: 100%;
     padding: 0 4rem;
