@@ -1,5 +1,7 @@
 <template>
   <div class="timeline-container">
+    <div class="title text-bold text-center">우리들의 이야기</div>
+    <div class="divider" />
     <TimelineItem
       v-for="(item, idx) in items"
       :item="item"
@@ -25,15 +27,15 @@ const items = [
   },
   {
     link,
-    text: '둘 만의 첫 프로젝트 ...',
+    text: '2020 ',
     date: 'March 04 2019',
     image: 'main.jpg',
     images: ['main.jpg', 'main.jpg', 'main.jpg'],
   },
   {
     link,
-    text: 'Got 1.000 followers on Twitter',
-    date: 'March 07 2019',
+    text: '둘만의 텃밭, 도시농부 도전기',
+    date: '2021',
   },
   {
     link,
@@ -42,7 +44,7 @@ const items = [
   },
   {
     link,
-    text: 'Over 12.000 views in a single day on my Medium posts',
+    text: '2024년 보',
     date: 'April 05 2019',
   },
 ]

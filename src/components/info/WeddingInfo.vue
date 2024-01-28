@@ -1,5 +1,7 @@
 <template>
   <div class="wedding">
+    <div class="title text-bold text-center">알리는 글</div>
+    <div class="divider" />
     <q-tabs
       dense
       narrow-indicator

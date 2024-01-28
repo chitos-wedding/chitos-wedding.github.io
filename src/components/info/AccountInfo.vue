@@ -2,11 +2,8 @@
   <div class="account-info">
     <div class="title text-bold text-center">마음 전하실 곳</div>
     <div class="divider" />
-    <div class="account-info-message">
-      <div>참석이 어려워 직접 축하를 전하지 못하는</div>
-      <div>분들을 위해 계좌번호를 기재하였습니다.</div>
-      <div>전해주시는 진심은 소중하게 간직하여</div>
-      <div>좋은 부부의 모습으로 보답하겠습니다.</div>
+    <div v-for="message in messages" class="account-info-message" :key="message">
+      {{ message }}
     </div>
     <div class="account-info-items q-gutter-sm">
       <q-list v-for="(item, idx) in items" bordered class="rounded-borders" :key="idx">
@@ -50,6 +47,14 @@ const items = [
     accountNumber: '61580104176214',
   },
 ]
+
+const messages = [
+  '참석이 어려워 직접 축하를 전하지 못하는',
+  '분들을 위해 계좌번호를 기재하였습니다.',
+  '전해주시는 진심은 소중하게 간직하여',
+  '좋은 부부의 모습으로 보답하겠습니다.',
+]
+
 const copyClipboard = (text) => {
   navigator.clipboard.writeText(text)
   quasar.notify({
@@ -65,9 +70,10 @@ const copyClipboard = (text) => {
 .account-info {
   margin: 0 3rem;
   &-message {
-    padding: 1rem;
+    color: $grey-8;
+    white-space: pre-wrap;
     text-align: center;
-    line-height: 1.7rem;
+    line-height: 2.5rem;
   }
 
   &-items {

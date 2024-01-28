@@ -5,6 +5,7 @@
     <MainImage />
     <component :is="InfoComponent('HallInfo')" />
     <component :is="InfoComponent('PoemInfo')" />
+    <component :is="InfoComponent('LongRoad')" />
     <component :is="InfoComponent('WelcomeInfo')" />
     <component :is="InfoComponent('FamilyInfo')" />
     <component :is="InfoComponent('FaceToFace')" />

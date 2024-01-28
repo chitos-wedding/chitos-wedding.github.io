@@ -56,13 +56,13 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
   position: relative;
   padding: 1rem 0;
 
-  border-left: 0.3rem solid #e17b77;
+  border-left: 0.2rem solid $red-3;
   // border-image: linear-gradient(to bottom, black 50%, transparent 50%) 1;
   &-first {
-    border-image: linear-gradient(to bottom, transparent 50%, #e17b77 50%) 1;
+    border-image: linear-gradient(to bottom, transparent 50%, $red-3 50%) 1;
   }
   &-last {
-    border-image: linear-gradient(to bottom, #e17b77 50%, transparent 50%) 1;
+    border-image: linear-gradient(to bottom, $red-3 50%, transparent 50%) 1;
   }
 }
 
@@ -140,13 +140,13 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
 .circle {
   position: absolute;
 
-  top: calc(50% - 1rem);
-  left: -1rem;
-  width: 2rem;
-  height: 2rem;
+  top: calc(50% - 0.75rem);
+  left: -0.9rem;
+  width: 1.5rem;
+  height: 1.5rem;
   z-index: 100;
 
-  border: 0.3rem solid #e17b77;
+  border: 0.2rem solid $red-3;
   border-radius: 50%;
   background-color: #fff;
 }
