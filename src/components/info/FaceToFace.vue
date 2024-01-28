@@ -1,12 +1,12 @@
 <template>
   <div ref="contentsRef" class="contents">
     <q-intersection once transition="fade" transition-duration="1000">
-      <img class="contents-image" :src="getImage('seohyun_solo.jpg')" />
+      <img class="contents-image" :src="getImage('seohyun-solo.jpg')" />
     </q-intersection>
     &
     <!-- <HeartIcon width="1.5rem" height="1.5rem" color="#d08c95" /> -->
     <q-intersection once transition="fade" transition-duration="1000">
-      <img class="contents-image" :src="getImage('seungjin_solo.jpg')" />
+      <img class="contents-image" :src="getImage('seungjin-solo.jpg')" />
     </q-intersection>
   </div>
 </template>
