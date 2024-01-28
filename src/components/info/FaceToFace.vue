@@ -119,7 +119,7 @@ onMounted(async () => {
   justify-content: space-between;
   width: 100%;
   height: 27.5rem;
-  padding: 3rem;
+  padding: 1rem;
 
   font-family: 'Nanum Myeongjo', serif;
   font-weight: bold;
