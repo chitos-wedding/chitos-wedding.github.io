@@ -21,9 +21,7 @@
           style="padding-top: 0"
           :key="image"
         >
-          <q-intersection once transition="fade" transition-duration="1000">
-            <img class="contents" :src="getImage(image)" />
-          </q-intersection>
+          <img class="contents" :src="getImage(image)" />
           <div class="image-wrapper" />
         </q-carousel-slide>
         <template #navigation-icon="{ active, onClick }">
@@ -70,7 +68,6 @@ defineExpose({ open, close })
   height: 100%;
   object-fit: contain;
   border-radius: 0.3rem;
-  background-color: $grey-2;
 
   + .image-wrapper {
     position: absolute;
