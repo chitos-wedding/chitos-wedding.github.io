@@ -17,6 +17,9 @@
         :class="{ 'kakao-map-lock': isLocked }"
         @mouseenter="isHovered = true"
         @mouseleave="isHovered = false"
+        @touchstart="isHovered = true"
+        @touchend="isHovered = false"
+        @touchcancel="isHovered = false"
       >
         <div v-if="isLocked && isHovered" class="kakao-map-lock-dim">
           <div class="kakao-map-lock-dim-message">
