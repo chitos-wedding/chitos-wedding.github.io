@@ -3,11 +3,11 @@
     <img class="main-image-effect" src="https://cdn2.makedear.com/homepage/img/effect/new1/2.png" />
     <TitleInfo />
     <MainImage />
-    <component :is="InfoComponent('HallInfo')" />
-    <component :is="InfoComponent('PoemInfo')" />
+    <HallInfo />
+    <PoemInfo />
     <component :is="InfoComponent('LongRoad')" />
-    <component :is="InfoComponent('WelcomeInfo')" />
-    <component :is="InfoComponent('FamilyInfo')" />
+    <WelcomeInfo />
+    <FamilyInfo />
     <component :is="InfoComponent('FaceToFace')" />
     <component :is="InfoComponent('MapInfo')" />
     <component :is="CalendarComponent()" :year="2024" :month="4" :date="6" />
@@ -28,6 +28,10 @@ import { TimelineItems } from '@/components/timeline'
 import GuestBook from '@/components/guestbook/GuestBook.vue'
 import MainImage from '@/components/MainImage.vue'
 import TitleInfo from '@/components/info/TitleInfo.vue'
+import HallInfo from '@/components/info/HallInfo.vue'
+import PoemInfo from '@/components/info/PoemInfo.vue'
+import FamilyInfo from '@/components/info/FamilyInfo.vue'
+import WelcomeInfo from '@/components/info/WelcomeInfo.vue'
 import { lazyLoadComponentIfVisible } from '@/utils/lazy'
 
 const infoComponents = ['DriveInfo', 'ShareInfo', 'ThankYou', 'CopyRight']
