@@ -1,6 +1,6 @@
 <template>
   <div class="layout-body">
-    <img class="main-image-effect" src="https://cdn2.makedear.com/homepage/img/effect/new1/2.png" />
+    <img class="effect" src="https://cdn2.makedear.com/homepage/img/effect/new1/2.png" />
     <TitleInfo />
     <MainImage />
     <HallInfo />
@@ -54,12 +54,15 @@ const InfoComponent = (component) => {
 
 <style lang="scss" scoped>
 .layout-body {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 36rem;
   background-color: #fdfdfd;
-}
-.main-image-effect {
-  position: absolute;
+
+  .effect {
+    position: absolute;
+    width: 100%;
+  }
 }
 </style>
