@@ -10,8 +10,7 @@
     <FamilyInfo />
     <component :is="InfoComponent('FaceToFace')" />
     <component :is="InfoComponent('MapInfo')" />
-    <component :is="CalendarComponent()" :year="2024" :month="4" :date="6" />
-    <!-- <TheCalendar :year="2024" :month="4" :date="6" /> -->
+    <TheCalendar :year="2024" :month="4" :date="6" />
     <component :is="InfoComponent('WeddingInfo')" />
     <TimelineItems />
     <component :is="InfoComponent('AccountInfo')" />
@@ -24,7 +23,7 @@
 </template>
 
 <script setup>
-// import { TheCalendar } from '@/components/calendar'
+import { TheCalendar } from '@/components/calendar'
 import { TimelineItems } from '@/components/timeline'
 import GuestBook from '@/components/guestbook/GuestBook.vue'
 import MainImage from '@/components/MainImage.vue'
@@ -37,13 +36,6 @@ import CopyRight from '@/components/info/CopyRight.vue'
 import { lazyLoadComponentIfVisible } from '@/utils/lazy'
 
 const infoComponents = ['DriveInfo', 'ShareInfo', 'ThankYou']
-
-const CalendarComponent = () => {
-  return lazyLoadComponentIfVisible({
-    componentLoader: () => import(`@/components/calendar/TheCalendar.vue`),
-    loadingComponent: () => import(`@/components/info/LoadingInfo.vue`),
-  })
-}
 
 const InfoComponent = (component) => {
   return lazyLoadComponentIfVisible({
