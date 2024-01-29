@@ -19,6 +19,7 @@
     <template v-for="(infoComponent, idx) in infoComponents" :key="`${infoComponent}-${idx}`">
       <component :is="InfoComponent(infoComponent)" />
     </template>
+    <CopyRight />
   </div>
 </template>
 
@@ -32,9 +33,10 @@ import HallInfo from '@/components/info/HallInfo.vue'
 import PoemInfo from '@/components/info/PoemInfo.vue'
 import FamilyInfo from '@/components/info/FamilyInfo.vue'
 import WelcomeInfo from '@/components/info/WelcomeInfo.vue'
+import CopyRight from '@/components/info/CopyRight.vue'
 import { lazyLoadComponentIfVisible } from '@/utils/lazy'
 
-const infoComponents = ['DriveInfo', 'ShareInfo', 'ThankYou', 'CopyRight']
+const infoComponents = ['DriveInfo', 'ShareInfo', 'ThankYou']
 
 const CalendarComponent = () => {
   return lazyLoadComponentIfVisible({
