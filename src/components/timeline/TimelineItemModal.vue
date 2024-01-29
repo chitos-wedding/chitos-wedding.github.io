@@ -8,7 +8,6 @@
         swipeable
         navigation
         arrows
-        padding
         animated
         control-color="grey"
         transition-prev="jump-right"
