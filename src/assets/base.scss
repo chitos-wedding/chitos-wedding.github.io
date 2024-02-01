@@ -26,6 +26,12 @@ html {
   border-bottom: 0.1rem dotted;
 }
 
+.vertical {
+  width: 0.1rem;
+  height: 1.8rem;
+  border-right: 0.1rem solid $grey-4;
+}
+
 ::-webkit-scrollbar {
   overflow: visible;
   width: 0.5rem;
@@ -37,17 +43,52 @@ html {
   border-radius: 0.5rem;
 }
 
+/* noto-serif-kr-regular - korean_latin */
 @font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Noto Serif KR';
-  src: url('./fonts/NotoSerifKR-Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/noto-serif-kr-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-serif-kr-700 - korean_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/noto-serif-kr-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* nanum-myeongjo-regular - korean_latin */
 @font-face {
-  font-family: 'Nanum Pen Script';
-  src: url('./fonts/NanumPenScript-Regular.ttf');
-}
-
-@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Nanum Myeongjo';
-  src: url('./fonts/NanumMyeongjo-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/nanum-myeongjo-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* nanum-myeongjo-700 - korean_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/nanum-myeongjo-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* nanum-pen-script-regular - korean_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nanum Pen Script';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/nanum-pen-script-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-family: 'Mapo Flower Island';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./fonts/MapoFlowerIslandA.woff') format('woff');
 }
