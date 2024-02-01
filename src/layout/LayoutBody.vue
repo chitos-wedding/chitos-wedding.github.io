@@ -23,6 +23,7 @@
     <ShareInfo />
     <ThankYou />
     <CopyRight />
+    <CheckAttendanceModal ref="checkAttendanceModalRef" />
   </div>
 </template>
 
@@ -45,6 +46,19 @@ import ShareInfo from '@/components/info/ShareInfo.vue'
 import ThankYou from '@/components/info/ThankYou.vue'
 import WelcomeInfo from '@/components/info/WelcomeInfo.vue'
 import CopyRight from '@/components/info/CopyRight.vue'
+import CheckAttendanceModal from '@/components/popup/CheckAttendanceModal.vue'
+import { ref, onMounted } from 'vue'
+
+const checkAttendanceModalRef = ref(null)
+
+const getCookie = (name) => {
+  var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)')
+  return value ? value[2] : null
+}
+
+onMounted(() => {
+  if (!getCookie('not_today')) checkAttendanceModalRef.value.open()
+})
 </script>
 
 <style lang="scss" scoped>
