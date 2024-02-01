@@ -20,7 +20,7 @@
           style="padding-top: 0"
           :key="image"
         >
-          <img class="contents" :src="getImage(image)" />
+          <img class="contents" :src="getImage(image)" loading="lazy" />
           <div class="image-wrapper" />
         </q-carousel-slide>
         <template #navigation-icon="{ active, onClick }">

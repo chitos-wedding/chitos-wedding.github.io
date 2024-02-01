@@ -1,6 +1,6 @@
 <template>
   <div class="wedding">
-    <div class="title text-bold text-center">알리는 글</div>
+    <div class="title text-bold text-center">예식 정보</div>
     <div class="divider" />
     <q-tabs
       dense
@@ -39,7 +39,7 @@
         <div class="wedding-tab-content-item">
           <div class="wedding-photo">
             <q-intersection once transition="fade" transition-duration="1000">
-              <img class="wedding-photo-image" :src="PhotoBooth" />
+              <img class="wedding-photo-image" :src="PhotoBooth" loading="lazy" />
             </q-intersection>
             <div class="wedding-photo-message">
               <div class="wedding-photo-message-line">포토부스가 설치될 예정입니다.</div>

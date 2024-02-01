@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="long-road" :src="getImage('long-load.jpg')" />
+    <img class="long-road" :src="getImage('long-load.jpg')" loading="lazy" />
   </div>
 </template>
 <script setup>

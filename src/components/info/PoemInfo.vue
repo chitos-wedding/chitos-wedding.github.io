@@ -5,7 +5,7 @@
         <img
           class="poem-image-item"
           src="https://cdn2.makedear.com/homepage/img/leaf.png"
-          alt="leaf"
+          loading="lazy"
         />
       </q-intersection>
     </div>

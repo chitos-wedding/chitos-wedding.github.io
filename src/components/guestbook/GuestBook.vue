@@ -1,13 +1,17 @@
 <template>
   <div class="guestbook">
-    <div class="title text-bold text-center">방명록</div>
+    <div class="title text-bold text-center">추억 나눔 방명록</div>
     <div class="divider"></div>
+    <div class="guestbook-messages">
+      <div>신랑 & 신부와 함께한 소중한 추억과</div>
+      <div>하고 싶은 말 자유롭게 작성해 주세요😊</div>
+    </div>
     <div class="guestbook-button" @click="openModal">글쓰기</div>
     <div class="guestbook-list">
       <div class="guestbook-item" v-for="(item, idx) of items" :key="idx">
         <div class="guestbook-item-image-wrapper">
           <q-intersection once transition="fade" transition-duration="1000">
-            <img class="guestbook-item-image" :src="item.image ?? defaultImage" />
+            <img class="guestbook-item-image" :src="item.image ?? defaultImage" loading="lazy" />
           </q-intersection>
         </div>
         <div class="guestbook-item-content">
@@ -56,7 +60,7 @@ loadList()
 </script>
 <style lang="scss" scoped>
 .guestbook {
-  padding: 0 1em;
+  padding: 1em;
 
   &-button {
     height: 3em;
@@ -76,6 +80,12 @@ loadList()
       background-color: $amber-2;
       cursor: pointer;
     }
+  }
+
+  &-messages {
+    padding: 1rem;
+    text-align: center;
+    color: $grey-8;
   }
 
   &-list {

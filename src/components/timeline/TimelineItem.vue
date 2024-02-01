@@ -5,7 +5,11 @@
       <div class="timeline-item-content-time">{{ item.date }}</div>
       <div class="timeline-item-content-post">
         <q-intersection once transition="fade" transition-duration="1000">
-          <img class="timeline-item-content-post-image" :src="getImage(item.image)" />
+          <img
+            class="timeline-item-content-post-image"
+            :src="getImage(item.image)"
+            loading="lazy"
+          />
         </q-intersection>
         <div class="timeline-item-content-post-body">
           <div class="timeline-item-content-post-body-text">{{ item.text }}</div>

@@ -1,23 +1,27 @@
 <template>
   <div class="layout-body">
-    <img class="effect" src="https://cdn2.makedear.com/homepage/img/effect/new1/2.png" />
+    <img
+      class="effect"
+      src="https://cdn2.makedear.com/homepage/img/effect/new1/2.png"
+      loading="lazy"
+    />
     <TitleInfo />
     <MainImage />
     <HallInfo />
     <PoemInfo />
-    <component :is="InfoComponent('LongRoad')" />
+    <LongRoad />
     <WelcomeInfo />
     <FamilyInfo />
-    <component :is="InfoComponent('FaceToFace')" />
-    <component :is="InfoComponent('MapInfo')" />
+    <FaceToFace />
+    <MapInfo />
     <TheCalendar :year="2024" :month="4" :date="6" />
-    <component :is="InfoComponent('WeddingInfo')" />
+    <WeddingInfo />
     <TimelineItems />
-    <component :is="InfoComponent('AccountInfo')" />
+    <AccountInfo />
     <GuestBook />
-    <template v-for="(infoComponent, idx) in infoComponents" :key="`${infoComponent}-${idx}`">
-      <component :is="InfoComponent(infoComponent)" />
-    </template>
+    <DriveInfo />
+    <ShareInfo />
+    <ThankYou />
     <CopyRight />
   </div>
 </template>
@@ -27,21 +31,20 @@ import { TheCalendar } from '@/components/calendar'
 import { TimelineItems } from '@/components/timeline'
 import GuestBook from '@/components/guestbook/GuestBook.vue'
 import MainImage from '@/components/MainImage.vue'
+import AccountInfo from '@/components/info/AccountInfo.vue'
 import TitleInfo from '@/components/info/TitleInfo.vue'
+import LongRoad from '@/components/info/LongRoad.vue'
 import HallInfo from '@/components/info/HallInfo.vue'
+import FaceToFace from '@/components/info/FaceToFace.vue'
+import WeddingInfo from '@/components/info/WeddingInfo.vue'
+import MapInfo from '@/components/info/MapInfo.vue'
 import PoemInfo from '@/components/info/PoemInfo.vue'
 import FamilyInfo from '@/components/info/FamilyInfo.vue'
+import DriveInfo from '@/components/info/DriveInfo.vue'
+import ShareInfo from '@/components/info/ShareInfo.vue'
+import ThankYou from '@/components/info/ThankYou.vue'
 import WelcomeInfo from '@/components/info/WelcomeInfo.vue'
 import CopyRight from '@/components/info/CopyRight.vue'
-import { lazyLoadComponentIfVisible } from '@/utils/lazy'
-
-const infoComponents = ['DriveInfo', 'ShareInfo', 'ThankYou']
-
-const InfoComponent = (component) => {
-  return lazyLoadComponentIfVisible({
-    componentLoader: () => import(`@/components/info/${component}.vue`),
-  })
-}
 </script>
 
 <style lang="scss" scoped>

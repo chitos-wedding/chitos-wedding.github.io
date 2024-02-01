@@ -1,10 +1,21 @@
 <template>
-  <div class="link-button-group">
-    <q-btn-group unelevated>
-      <q-btn label="네이버지도" icon="img:icon/naver_map.png" @click="clickNaver" />
-      <q-btn label="티맵" icon="img:icon/t_map.png" @click="clickTmap" />
-      <q-btn label="카카오맵" icon="img:icon/kakao_map.png" @click="clickKakao" />
-    </q-btn-group>
+  <div class="map-link">
+    <div class="map-link-group">
+      <div class="map-link-group-item" @click="clickNaver">
+        <img class="map-link-group-item-image" src="/icon/naver_map.png" loading="lazy" />
+        <span>네이버지도</span>
+      </div>
+      <div class="vertical" />
+      <div class="map-link-group-item" @click="clickTmap">
+        <img class="map-link-group-item-image" src="/icon/t_map.png" loading="lazy" />
+        <span>티맵</span>
+      </div>
+      <div class="vertical" />
+      <div class="map-link-group-item" @click="clickKakao">
+        <img class="map-link-group-item-image" src="/icon/kakao_map.png" loading="lazy" />
+        <span>카카오맵</span>
+      </div>
+    </div>
   </div>
 </template>
 <script setup>
@@ -19,8 +30,31 @@ const clickKakao = () => {
 }
 </script>
 <style lang="scss" scoped>
-.link-button-group {
-  display: flex;
-  justify-content: center;
+.map-link {
+  padding: 1rem;
+  font-size: 1.2rem;
+
+  &-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    border: 0.1rem solid $grey-4;
+    border-radius: 0.5rem;
+
+    &-item {
+      cursor: pointer;
+      display: flex;
+      padding: 1rem;
+      justify-content: center;
+      align-items: center;
+
+      &-image {
+        width: 1.6rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
 }
 </style>

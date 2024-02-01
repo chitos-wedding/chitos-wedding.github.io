@@ -1,7 +1,7 @@
 <template>
   <div class="thank-you">
     <q-intersection once transition="fade" transition-duration="1000">
-      <img class="thank-you-image" :src="getImage()" />
+      <img class="thank-you-image" :src="getImage()" loading="lazy" />
     </q-intersection>
   </div>
 </template>
