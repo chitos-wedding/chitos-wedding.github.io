@@ -1,4 +1,4 @@
-* {
+body {
   font-family: "Noto Serif KR", "Noto Sans", sans-serif;
 }
 
@@ -7,11 +7,6 @@ html {
   padding: 0;
   font-size: 62.5%;
   box-sizing: border-box;
-
-  // font-family: "Noto Serif KR", "Noto Sans", sans-serif;
-  // font-optical-sizing: auto;
-  // font-weight: 400;
-  // font-style: normal;
 }
 
 .title {
@@ -84,6 +79,15 @@ html {
   font-style: normal;
   font-weight: 400;
   src: url('./fonts/nanum-pen-script-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* parisienne-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Parisienne';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/parisienne-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 @font-face {
