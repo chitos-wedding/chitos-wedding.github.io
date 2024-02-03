@@ -13,10 +13,11 @@
   text-align: center;
   padding: 3rem;
   letter-spacing: 0.5rem;
-  line-height: 4rem;
+  line-height: 3.5rem;
 
   font-size: 2.5rem;
   font-weight: bold;
+  -webkit-text-stroke: 0.05rem #424242;
 
   .and {
     font-size: 1.5rem;
