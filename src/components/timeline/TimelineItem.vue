@@ -7,8 +7,9 @@
         <q-intersection once transition="fade" transition-duration="1000">
           <img
             class="timeline-item-content-post-image"
-            :src="getImage(item.image)"
             loading="lazy"
+            :src="getImage(item.image)"
+            @click="openModal"
           />
         </q-intersection>
         <div class="timeline-item-content-post-body">
@@ -114,6 +115,7 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
       object-fit: contain;
       border-radius: 0.5rem;
       background-color: $grey-2;
+      cursor: pointer;
     }
 
     &-body {
@@ -123,6 +125,7 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
       width: 100%;
 
       &-text {
+        white-space: pre-wrap;
         padding: 0.5rem 0;
         font-size: 1rem;
       }
