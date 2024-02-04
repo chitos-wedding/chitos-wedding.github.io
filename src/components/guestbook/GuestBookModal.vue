@@ -83,15 +83,90 @@ const dialogChanged = () => {
   }
 }
 
+const resizeImage = (settings) => {
+  const file = settings.file
+  const maxSize = settings.maxSize
+  const reader = new FileReader()
+  const image = new Image()
+  const canvas = document.createElement('canvas')
+
+  const dataURItoBlob = (dataURI) => {
+    const bytes =
+      dataURI.split(',')[0].indexOf('base64') >= 0
+        ? atob(dataURI.split(',')[1])
+        : unescape(dataURI.split(',')[1])
+    const mime = dataURI.split(',')[0].split(':')[1].split(';')[0]
+    const max = bytes.length
+    const ia = new Uint8Array(max)
+    for (let i = 0; i < max; i++) ia[i] = bytes.charCodeAt(i)
+    return new Blob([ia], { type: mime })
+  }
+
+  const resize = () => {
+    let width = image.width
+    let height = image.height
+    if (width > height) {
+      if (width > maxSize) {
+        height *= maxSize / width
+        width = maxSize
+      }
+    } else {
+      if (height > maxSize) {
+        width *= maxSize / height
+        height = maxSize
+      }
+    }
+    canvas.width = width
+    canvas.height = height
+    canvas.getContext('2d').drawImage(image, 0, 0, width, height)
+    const dataUrl = canvas.toDataURL(file.type)
+    return dataURItoBlob(dataUrl)
+  }
+
+  return new Promise((resolve, no) => {
+    if (!file) return
+    if (!file.type.match(/image.*/)) {
+      no(new Error('Not an image'))
+      return
+    }
+    reader.onload = (readerEvent) => {
+      image.onload = () => {
+        return resolve(resize())
+      }
+      image.src = readerEvent.target.result
+    }
+    reader.readAsDataURL(file)
+  })
+}
+
+const handleImgInput = async (file) => {
+  const config = {
+    file,
+    maxSize: 1024,
+  }
+  return await resizeImage(config)
+}
+
 const saveMessage = async () => {
   try {
     q.loading.show()
     if (gb.value.image) {
+      const contentType = gb.value.image.type
       const imageRef = getStorageRef(`images/${gb.value.image.name}`)
-      const result = await uploadBytes(imageRef, gb.value.image)
-      gb.value.imageUrl = await getDownloadURL(result.ref)
+      const resizedImageRef = getStorageRef(`images/resized/${gb.value.image.name}`)
+      const [result, resizedResult] = await Promise.all([
+        uploadBytes(imageRef, gb.value.image),
+        uploadBytes(resizedImageRef, await handleImgInput(gb.value.image), { contentType }),
+      ])
+      const [imageUrl, resizedImageUrl] = await Promise.all([
+        getDownloadURL(result.ref),
+        getDownloadURL(resizedResult.ref),
+      ])
+      gb.value.imageUrl = imageUrl
+      gb.value.resizedImageUrl = resizedImageUrl
     }
     const data = {
+      resizedImage: gb.value.resizedImageUrl || null,
       image: gb.value.imageUrl || null,
       name: gb.value.name,
       message: gb.value.message,

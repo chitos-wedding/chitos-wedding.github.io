@@ -10,9 +10,12 @@
     <div class="guestbook-list">
       <div class="guestbook-item" v-for="(item, idx) of items" :key="idx">
         <div class="guestbook-item-image-wrapper">
-          <q-intersection once transition="fade" transition-duration="1000">
-            <img class="guestbook-item-image" :src="item.image ?? defaultImage" loading="lazy" />
-          </q-intersection>
+          <img
+            class="guestbook-item-image"
+            :src="item.resizedImage ?? defaultImage"
+            loading="lazy"
+            @click="openDetailModal(item)"
+          />
         </div>
         <div class="guestbook-item-content">
           <div class="guestbook-item-header">
@@ -24,6 +27,7 @@
       </div>
     </div>
     <GuestBookModal ref="guestBookModalRef" @update="loadList" />
+    <GuestBookDetailModal ref="guestBookDetailModalRef" />
   </div>
 </template>
 <script setup>
@@ -32,13 +36,16 @@ import { date } from 'quasar'
 import { collection, query, orderBy, getDocs } from 'firebase/firestore'
 import { db } from '@/plugins/firebase'
 import GuestBookModal from './GuestBookModal.vue'
+import GuestBookDetailModal from './GuestBookDetailModal.vue'
 import defaultImage from '@/assets/img/default.png'
 
 const commentsRef = collection(db, 'comments')
 const items = ref([])
 const guestBookModalRef = ref(null)
+const guestBookDetailModalRef = ref(null)
 
 const openModal = () => guestBookModalRef.value.open()
+const openDetailModal = (item) => guestBookDetailModalRef.value.open(item)
 
 const convertTimeStamp = (timestamp) => {
   return date.formatDate(timestamp.toDate(), 'YYYY-MM-DD HH:mm')
