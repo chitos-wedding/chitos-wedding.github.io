@@ -31,7 +31,7 @@ const clickKakao = () => {
 </script>
 <style lang="scss" scoped>
 .map-link {
-  padding: 1rem;
+  padding: 1rem 0;
   font-size: 1.2rem;
 
   &-group {

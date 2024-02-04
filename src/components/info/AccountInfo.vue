@@ -6,7 +6,7 @@
       {{ message }}
     </div>
     <div class="account-info-items q-gutter-sm">
-      <q-list v-for="(item, idx) in items" bordered class="rounded-borders" :key="idx">
+      <q-list v-for="(item, idx) in items" bordered class="style-button" :key="idx">
         <q-expansion-item :label="item.headerText">
           <q-card>
             <q-card-section>

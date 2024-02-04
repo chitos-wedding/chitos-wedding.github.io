@@ -1,6 +1,6 @@
 <template>
   <div ref="shareInfoRef" class="share">
-    <div class="share-button" @click="clickButton">{{ '카카오톡 공유하기' }}</div>
+    <div class="share-button style-button" @click="clickButton">{{ '카카오톡 공유하기' }}</div>
   </div>
 </template>
 <script setup>
@@ -52,10 +52,6 @@ onMounted(() => {
 
   &-button {
     padding: 1rem;
-    border: 0.1rem solid $grey-6;
-    border-radius: 1rem;
-
-    cursor: pointer;
   }
 }
 </style>
