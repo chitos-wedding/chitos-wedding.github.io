@@ -1,6 +1,6 @@
 <template>
   <div class="wedding">
-    <div class="title text-bold text-center">예식 정보</div>
+    <div class="title text-bold text-center">안내사항</div>
     <div class="divider" />
     <q-tabs
       dense
@@ -24,8 +24,24 @@
     <q-tab-panels animated class="wedding-tab-content" v-model="selected">
       <q-tab-panel dark :name="tabs[0].value">
         <div class="wedding-tab-content-item">
-          <div>인터불고 호텔 주차장: 제한 없음</div>
-          <div>* 자리 없을 시, 엑스코 주차장: 2시간 제한</div>
+          <div class="wedding-content">
+            <img class="wedding-content-image" :src="Hall" loading="lazy" />
+            <div class="wedding-content-message">
+              <div class="wedding-content-message-line emp">예식 정보</div>
+              <div class="divider" />
+              <div class="wedding-content-message-line">결혼식은 호텔 2층에서 진행됩니다.</div>
+              <div class="wedding-content-message-line emp info">
+                * 장소가 협소하여 화환은 정중히 사양합니다.
+              </div>
+              <br />
+              <div class="wedding-content-message-line emp">주차 정보</div>
+              <div class="divider" />
+              <div class="wedding-content-message-line">인터불고 호텔 주차장: 제한 없음</div>
+              <div class="wedding-content-message-line emp info">
+                * 자리 없을 시, 엑스코 주차장: 2시간 제한
+              </div>
+            </div>
+          </div>
         </div>
       </q-tab-panel>
 
@@ -33,9 +49,14 @@
         <div class="wedding-tab-content-item">
           <div class="wedding-content">
             <img class="wedding-content-image" :src="Dining" loading="lazy" />
-          </div>
-          <div class="wedding-content-message">
-            <div>식사는 지하 1층에서 하실 수 있습니다.</div>
+            <div class="wedding-content-message">
+              <div class="wedding-content-message-line emp">17:00 ~ 19:00</div>
+              <div class="divider" />
+              <div class="wedding-content-message-line">식사장소는 지하 1층입니다.</div>
+              <div class="wedding-content-message-line">부족함 없이 즐기실 수 있도록</div>
+              <div class="wedding-content-message-line">뷔페식으로 다양하게 준비했습니다.</div>
+              <div class="wedding-content-message-line">마음껏 식사를 즐겨주시기 바랍니다.</div>
+            </div>
           </div>
         </div>
       </q-tab-panel>
@@ -43,9 +64,7 @@
       <q-tab-panel :name="tabs[2].value">
         <div class="wedding-tab-content-item">
           <div class="wedding-content">
-            <q-intersection once transition="fade" transition-duration="1000">
-              <img class="wedding-content-image" :src="PhotoBooth" loading="lazy" />
-            </q-intersection>
+            <img class="wedding-content-image" :src="PhotoBooth" loading="lazy" />
             <div class="wedding-content-message">
               <div class="wedding-content-message-line">포토부스가 설치될 예정입니다.</div>
               <div class="wedding-content-message-line">귀한 발걸음 해주신 여러분의</div>
@@ -60,11 +79,12 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import Dining from '@/assets/img/Dining.jpg'
+import Hall from '@/assets/img/hall.jpg'
+import Dining from '@/assets/img/dining.jpg'
 import PhotoBooth from '@/assets/img/photo-booth.jpg'
 const tabs = [
   {
-    text: '주차안내',
+    text: '식장정보',
     value: 'parking',
   },
   {
@@ -109,16 +129,24 @@ const selected = ref(tabs[0].value)
   }
 
   &-content {
-    padding: 1rem;
+    // padding-bottom: 1rem;
+
     &-image {
       width: 100%;
       border-radius: 0.8rem;
     }
     &-message {
+      padding-top: 1rem;
       text-align: center;
-      line-height: 3rem;
-      // &-line {
-      // }
+      line-height: 2rem;
+
+      .emp {
+        font-size: 0.9em;
+        font-weight: bold;
+      }
+      .info {
+        color: $grey-8;
+      }
     }
   }
 }
