@@ -31,21 +31,26 @@
 
       <q-tab-panel :name="tabs[1].value">
         <div class="wedding-tab-content-item">
-          <div>식사는 지하 1층에서 하실 수 있습니다.</div>
+          <div class="wedding-content">
+            <img class="wedding-content-image" :src="Dining" loading="lazy" />
+          </div>
+          <div class="wedding-content-message">
+            <div>식사는 지하 1층에서 하실 수 있습니다.</div>
+          </div>
         </div>
       </q-tab-panel>
 
       <q-tab-panel :name="tabs[2].value">
         <div class="wedding-tab-content-item">
-          <div class="wedding-photo">
+          <div class="wedding-content">
             <q-intersection once transition="fade" transition-duration="1000">
-              <img class="wedding-photo-image" :src="PhotoBooth" loading="lazy" />
+              <img class="wedding-content-image" :src="PhotoBooth" loading="lazy" />
             </q-intersection>
-            <div class="wedding-photo-message">
-              <div class="wedding-photo-message-line">포토부스가 설치될 예정입니다.</div>
-              <div class="wedding-photo-message-line">귀한 발걸음 해주신 여러분의</div>
-              <div class="wedding-photo-message-line">환한 미소와 따뜻한 말씀 남겨주시면</div>
-              <div class="wedding-photo-message-line">소중히 간직하도록 하겠습니다.</div>
+            <div class="wedding-content-message">
+              <div class="wedding-content-message-line">포토부스가 설치될 예정입니다.</div>
+              <div class="wedding-content-message-line">귀한 발걸음 해주신 여러분의</div>
+              <div class="wedding-content-message-line">환한 미소와 따뜻한 말씀 남겨주시면</div>
+              <div class="wedding-content-message-line">소중히 간직하도록 하겠습니다.</div>
             </div>
           </div>
         </div>
@@ -55,6 +60,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+import Dining from '@/assets/img/Dining.jpg'
 import PhotoBooth from '@/assets/img/photo-booth.jpg'
 const tabs = [
   {
@@ -102,7 +108,7 @@ const selected = ref(tabs[0].value)
     }
   }
 
-  &-photo {
+  &-content {
     padding: 1rem;
     &-image {
       width: 100%;
