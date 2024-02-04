@@ -66,6 +66,9 @@
           <div class="wedding-content">
             <img class="wedding-content-image" :src="PhotoBooth" loading="lazy" />
             <div class="wedding-content-message">
+              <div class="wedding-content-message-line emp">16:00 ~ 17:30</div>
+              <div class="divider" />
+              <div class="wedding-content-message-line">본식 시작 1시간 전부터</div>
               <div class="wedding-content-message-line">포토부스가 설치될 예정입니다.</div>
               <div class="wedding-content-message-line">귀한 발걸음 해주신 여러분의</div>
               <div class="wedding-content-message-line">환한 미소와 따뜻한 말씀 남겨주시면</div>
@@ -138,7 +141,7 @@ const selected = ref(tabs[0].value)
     &-message {
       padding-top: 1rem;
       text-align: center;
-      line-height: 2rem;
+      line-height: 2.25rem;
 
       .emp {
         font-size: 0.9em;
