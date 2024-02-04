@@ -30,6 +30,8 @@ const items = [
     link,
     text: '💕승진과 서현의 첫 만남\n💻 둘만의 첫 프로젝트\n🤭싸(피)내 커플 진지가?',
     date: '2019년 여름부터 겨울까지',
+    image: 'ssafy/01.jpg',
+    images: ['ssafy/01.jpg', 'ssafy/02.jpg', 'ssafy/03.jpg', 'ssafy/04.png', 'ssafy/05.jpg'],
   },
   {
     link,
