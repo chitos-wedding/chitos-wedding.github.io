@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="long-road" :src="getImage('long-road.jpg')" loading="lazy" />
+    <img class="polite-photo" :src="getImage('polite-photo.jpg')" loading="lazy" />
   </div>
 </template>
 <script setup>
@@ -9,7 +9,7 @@ const getImage = (fileName) => {
 }
 </script>
 <style lang="scss" scoped>
-.long-road {
+.polite-photo {
   width: 100%;
   padding: 2rem 0;
 }

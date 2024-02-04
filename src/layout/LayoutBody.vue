@@ -18,6 +18,7 @@
     <WeddingInfo />
     <TimelineItems />
     <AccountInfo />
+    <PolitePhoto />
     <GuestBook />
     <DriveInfo />
     <ShareInfo />
@@ -32,6 +33,7 @@ import { TheCalendar } from '@/components/calendar'
 import { TimelineItems } from '@/components/timeline'
 import GuestBook from '@/components/guestbook/GuestBook.vue'
 import MainImage from '@/components/MainImage.vue'
+import PolitePhoto from '@/components/info/PolitePhoto.vue'
 import AccountInfo from '@/components/info/AccountInfo.vue'
 import TitleInfo from '@/components/info/TitleInfo.vue'
 import LongRoad from '@/components/info/LongRoad.vue'
