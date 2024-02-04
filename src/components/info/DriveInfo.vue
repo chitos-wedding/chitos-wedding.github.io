@@ -2,6 +2,11 @@
   <div class="drive-info">
     <div class="title text-bold text-center">사진 올려주세요</div>
     <div class="divider" />
+    <div class="drive-info-messages">
+      <div>결혼식 당일 촬영한 사진과 영상은</div>
+      <div>신랑 신부에게 전달하고 싶다면</div>
+      <div>아래 드라이브에 편하게 올려주세요!🙌</div>
+    </div>
     <div class="drive-info-button-group">
       <q-btn-group unelevated>
         <q-btn label="구글 드라이브" icon="img:icon/google_drive.png" @click="clickGDrive" />
@@ -29,6 +34,11 @@ const clickNDrive = () => {
     display: flex;
     justify-content: center;
     padding: 1rem;
+  }
+  &-messages {
+    padding: 1rem;
+    text-align: center;
+    color: $grey-8;
   }
 }
 </style>
