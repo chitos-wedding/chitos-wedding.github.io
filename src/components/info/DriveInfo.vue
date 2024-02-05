@@ -1,6 +1,6 @@
 <template>
   <div class="drive-info">
-    <div class="title text-bold text-center">사진 올려주세요</div>
+    <div class="title text-bold text-center">본식 사진 공유</div>
     <div class="divider" />
     <div class="drive-info-messages">
       <div>결혼식 당일 촬영한 사진과 영상은</div>
@@ -30,13 +30,14 @@ const clickNDrive = () => {
 
 <style lang="scss" scoped>
 .drive-info {
+  padding: 2rem;
   &-button-group {
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem 0;
   }
   &-messages {
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
     color: $grey-8;
   }

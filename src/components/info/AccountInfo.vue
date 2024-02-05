@@ -90,7 +90,7 @@ const copyClipboard = (text) => {
 </script>
 <style lang="scss" scoped>
 .account-info {
-  margin: 0 3rem;
+  padding: 0 2rem;
   &-message {
     color: $grey-8;
     white-space: pre-wrap;
