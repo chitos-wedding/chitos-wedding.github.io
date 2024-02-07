@@ -13,11 +13,12 @@
             <q-btn-toggle
               spread
               unelevated
-              toggle-color="primary"
+              toggle-color="brown-3"
               :options="[
                 { label: '신랑측', value: 'groom' },
                 { label: '신부측', value: 'bride' },
               ]"
+              style="border: 0.1rem solid rgba(0, 0, 0, 0.24)"
               v-model="model.classification"
             />
           </div>
@@ -131,7 +132,8 @@ defineExpose({ open, close })
       line-height: 4rem;
       border: 0.1rem solid $grey-4;
       border-radius: 0.5rem;
-      background-color: $grey-4;
+      // background-color: $grey-4;
+      background-color: #ece2e2c9;
       cursor: pointer;
     }
   }

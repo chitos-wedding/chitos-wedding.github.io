@@ -48,6 +48,7 @@ const messages = [
     color: $grey-8;
     font-size: 2rem;
     font-family: 'Nanum Pen Script', cursive;
+    font-weight: 500;
 
     border-bottom: 0.1rem solid $grey-3;
 

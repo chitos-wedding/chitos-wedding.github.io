@@ -13,6 +13,7 @@
   align-items: center;
   text-align: center;
   padding: 2rem;
-  line-height: 4rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
 }
 </style>
