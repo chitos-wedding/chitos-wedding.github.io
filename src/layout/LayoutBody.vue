@@ -17,6 +17,7 @@
     <TheCalendar :year="2024" :month="4" :date="6" />
     <WeddingInfo />
     <TimelineItems />
+    <CheckParticipation @open="openCheckModal" />
     <AccountInfo />
     <PolitePhoto />
     <GuestBook />
@@ -48,6 +49,7 @@ import ShareInfo from '@/components/info/ShareInfo.vue'
 import ThankYou from '@/components/info/ThankYou.vue'
 import WelcomeInfo from '@/components/info/WelcomeInfo.vue'
 import CopyRight from '@/components/info/CopyRight.vue'
+import CheckParticipation from '@/components/info/CheckParticipation.vue'
 import CheckAttendanceModal from '@/components/popup/CheckAttendanceModal.vue'
 import { ref, onMounted } from 'vue'
 
@@ -58,8 +60,12 @@ const getCookie = (name) => {
   return value ? value[2] : null
 }
 
+const openCheckModal = () => {
+  checkAttendanceModalRef.value.open()
+}
+
 onMounted(() => {
-  if (!getCookie('not_today')) checkAttendanceModalRef.value.open()
+  if (!getCookie('not_today')) openCheckModal()
 })
 </script>
 
