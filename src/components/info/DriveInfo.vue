@@ -7,11 +7,24 @@
       <div>신랑 신부에게 전달하고 싶다면</div>
       <div>아래 드라이브에 편하게 올려주세요!🙌</div>
     </div>
-    <div class="drive-info-button-group">
-      <q-btn-group unelevated>
-        <q-btn label="구글 드라이브" icon="img:icon/google_drive.png" @click="clickGDrive" />
-        <q-btn label="네이버 마이박스" icon="img:icon/mybox_drive.png" @click="clickNDrive" />
-      </q-btn-group>
+    <div class="drive-info-button-group style-button">
+      <div class="drive-info-button-group-item" @click="clickGDrive">
+        <img
+          class="drive-info-button-group-item-image"
+          src="/icon/google_drive.png"
+          loading="lazy"
+        />
+        <span>구글 드라이브</span>
+      </div>
+      <div class="vertical" />
+      <div class="drive-info-button-group-item" @click="clickNDrive">
+        <img
+          class="drive-info-button-group-item-image"
+          src="/icon/mybox_drive.png"
+          loading="lazy"
+        />
+        <span>네이버 마이박스</span>
+      </div>
     </div>
   </div>
 </template>
@@ -31,15 +44,29 @@ const clickNDrive = () => {
 <style lang="scss" scoped>
 .drive-info {
   padding: 2rem;
-  &-button-group {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-  }
+
   &-messages {
     padding: 1rem 0;
     text-align: center;
     color: $grey-8;
+  }
+
+  &-button-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &-item {
+      display: flex;
+      padding: 1rem;
+      justify-content: center;
+      align-items: center;
+
+      &-image {
+        width: 1.6rem;
+        margin-right: 0.5rem;
+      }
+    }
   }
 }
 </style>
