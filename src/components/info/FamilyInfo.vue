@@ -23,6 +23,7 @@
 .family {
   text-align: center;
   padding: 3rem;
+  font-size: 1.6rem;
 
   &-area {
     padding-bottom: 1rem;

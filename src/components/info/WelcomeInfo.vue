@@ -22,7 +22,7 @@ const messages = [
 
   &-message {
     color: $grey-8;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
 
     white-space: pre-wrap;
