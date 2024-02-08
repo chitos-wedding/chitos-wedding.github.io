@@ -17,13 +17,13 @@
     <TheCalendar :year="2024" :month="4" :date="6" />
     <WeddingInfo />
     <CheckParticipation @open="openCheckModal" />
-    <TimelineItems />
     <AccountInfo />
     <PolitePhoto />
+    <TimelineItems />
     <GuestBook />
     <DriveInfo />
-    <ThankYou />
     <ShareInfo />
+    <ThankYou />
     <CopyRight />
     <CheckAttendanceModal ref="checkAttendanceModalRef" />
   </div>
