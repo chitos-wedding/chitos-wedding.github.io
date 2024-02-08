@@ -7,7 +7,7 @@
     </div>
     <div class="account-info-items q-gutter-sm">
       <q-list v-for="(item, idx) in items" bordered class="style-button" :key="idx">
-        <q-expansion-item :label="item.headerText">
+        <q-expansion-item :label="`${item.emoji} ${item.headerText}`">
           <q-card>
             <q-card-section>
               <div class="account-info-item">
@@ -51,6 +51,7 @@ import KakaoPay from '@/assets/img/icon/kakao-pay.jpg'
 
 const items = [
   {
+    emoji: '🤵',
     headerText: '신랑',
     name: '백서현',
     bankName: '농협',
@@ -58,6 +59,7 @@ const items = [
     kakaoPay: 'https://qr.kakaopay.com/FUMieahFh',
   },
   {
+    emoji: '👰',
     headerText: '신부',
     name: '하승진',
     bankName: '국민',
