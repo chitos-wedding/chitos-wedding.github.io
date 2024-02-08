@@ -17,20 +17,17 @@ import MainImage from '@/assets/img/main.jpg'
   min-height: 30rem;
 
   &-wrapper {
-    position: relative;
     &-shadow {
       position: absolute;
       width: 100%;
       bottom: 0;
       height: 7rem;
-      // background: linear-gradient(180deg, transparent, #fdfdfd);
     }
   }
 
   &-image {
     width: 100%;
     padding: 0 3rem;
-    position: relative;
   }
 }
 </style>
