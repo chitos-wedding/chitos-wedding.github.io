@@ -109,8 +109,8 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
     gap: 1rem;
 
     &-image {
-      width: 7rem;
-      height: 7rem;
+      width: 10rem;
+      height: 10rem;
       flex: 0 0 auto;
       object-fit: contain;
       border-radius: 0.5rem;
