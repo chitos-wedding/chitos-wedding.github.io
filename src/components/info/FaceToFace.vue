@@ -116,10 +116,10 @@ onMounted(async () => {
 .contents {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   height: 27.5rem;
-  padding: 1rem;
+  padding: 5rem;
 
   font-family: 'Nanum Myeongjo', serif;
   font-weight: bold;
