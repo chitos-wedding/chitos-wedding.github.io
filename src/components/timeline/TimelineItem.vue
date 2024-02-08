@@ -2,7 +2,6 @@
   <div class="timeline-item" :class="classes">
     <span class="circle" />
     <div class="timeline-item-content">
-      <div class="timeline-item-content-time">{{ item.date }}</div>
       <div class="timeline-item-content-post">
         <q-intersection once transition="fade" transition-duration="1000">
           <img
@@ -13,7 +12,10 @@
           />
         </q-intersection>
         <div class="timeline-item-content-post-body">
-          <div class="timeline-item-content-post-body-text">{{ item.text }}</div>
+          <div class="timeline-item-content-post-body-top">
+            <div class="timeline-item-content-post-body-top-time">{{ item.date }}</div>
+            <div class="timeline-item-content-post-body-top-text">{{ item.text }}</div>
+          </div>
           <div class="timeline-item-content-post-body-select" @click="openModal">
             {{ item.link.text }}
           </div>
@@ -97,13 +99,6 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
     height: 1.5rem;
   }
 
-  &-time {
-    text-align: right;
-    color: #777;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-
   &-post {
     display: flex;
     gap: 1rem;
@@ -124,9 +119,17 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
       justify-content: space-between;
       width: 100%;
 
-      &-text {
-        white-space: pre-wrap;
-        padding: 0.5rem 0;
+      &-top {
+        &-time {
+          text-align: right;
+          color: #777;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+        &-text {
+          white-space: pre-wrap;
+          padding: 0.5rem 0;
+        }
       }
 
       &-select {
