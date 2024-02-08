@@ -30,14 +30,14 @@
               <div class="wedding-content-message-line emp">예식 정보</div>
               <div class="divider" />
               <div class="wedding-content-message-line">결혼식은 호텔 2층에서 진행됩니다.</div>
-              <div class="wedding-content-message-line emp info">
+              <div class="wedding-content-message-line info">
                 * 장소가 협소하여 화환은 정중히 사양합니다.
               </div>
               <br />
               <div class="wedding-content-message-line emp">주차 정보</div>
               <div class="divider" />
               <div class="wedding-content-message-line">인터불고 호텔 주차장: 제한 없음</div>
-              <div class="wedding-content-message-line emp info">
+              <div class="wedding-content-message-line info">
                 * 자리 없을 시, 엑스코 주차장: 2시간 제한
               </div>
             </div>
@@ -126,7 +126,7 @@ const selected = ref(tabs[0].value)
       border-radius: 0 0 0.5rem 0.5rem;
 
       &-item {
-        height: 35rem;
+        height: 36rem;
       }
     }
   }
@@ -139,15 +139,16 @@ const selected = ref(tabs[0].value)
       border-radius: 0.8rem;
     }
     &-message {
-      padding-top: 1rem;
+      padding: 1rem 0 2rem 0;
       text-align: center;
       line-height: 2.25rem;
 
       .emp {
-        font-size: 0.9em;
+        font-size: 1.5rem;
         font-weight: bold;
       }
       .info {
+        font-size: 1.2rem;
         color: $grey-8;
       }
     }
