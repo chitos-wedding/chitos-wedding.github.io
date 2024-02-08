@@ -46,6 +46,7 @@
       <q-card-actions class="check-action">
         <div class="check-action-button" @click="send">참석 의사 보내기</div>
         <q-checkbox size="sm" v-model="notToday" label="오늘 하루 보지 않기" />
+        <div class="check-action-close" v-close-popup>[닫기]</div>
       </q-card-actions>
     </q-card>
   </q-dialog>
@@ -121,6 +122,8 @@ defineExpose({ open, close })
     }
   }
   &-action {
+    display: flex;
+    justify-content: space-between;
     margin: 1rem;
 
     &-button {
@@ -135,6 +138,14 @@ defineExpose({ open, close })
       // background-color: $grey-4;
       background-color: #ece2e2c9;
       cursor: pointer;
+    }
+
+    &-close {
+      cursor: pointer;
+      &:hover {
+        color: $grey-6;
+        text-decoration: underline;
+      }
     }
   }
 }
