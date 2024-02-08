@@ -88,7 +88,7 @@ const items = [
   {
     link,
     text: '👰🤵 치토스 웨딩 준비',
-    date: '2024년',
+    date: '2024년 봄',
     image: 'studio/01.jpg',
     images: [
       'studio/01.jpg',
