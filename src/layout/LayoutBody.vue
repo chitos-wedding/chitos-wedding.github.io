@@ -13,8 +13,8 @@
     <WelcomeInfo />
     <FamilyInfo />
     <FaceToFace />
-    <MapInfo />
     <TheCalendar :year="2024" :month="4" :date="6" />
+    <MapInfo />
     <WeddingInfo />
     <CheckParticipation @open="openCheckModal" />
     <AccountInfo />
