@@ -100,8 +100,8 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
   &-time {
     text-align: right;
     color: #777;
-    font-size: 0.75rem;
     font-weight: bold;
+    font-size: 1.2rem;
   }
 
   &-post {
@@ -127,15 +127,14 @@ const openModal = () => TimelineItemModalRef.value.open(item.value.images)
       &-text {
         white-space: pre-wrap;
         padding: 0.5rem 0;
-        font-size: 1rem;
       }
 
       &-select {
         text-align: right;
 
         color: #777;
-        font-size: 0.75rem;
         font-weight: bold;
+        font-size: 1.2rem;
 
         cursor: pointer;
         user-select: none;
