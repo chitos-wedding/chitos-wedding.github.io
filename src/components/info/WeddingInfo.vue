@@ -16,6 +16,7 @@
       <q-tab
         v-for="tab in tabs"
         class="wedding-tab-item"
+        content-class="wedding-tab-item-text"
         :label="tab.text"
         :name="tab.value"
         :key="tab.value"
@@ -102,6 +103,9 @@ const tabs = [
 const selected = ref(tabs[0].value)
 </script>
 <style lang="scss" scoped>
+:deep(.q-tab__label) {
+  font-weight: bold;
+}
 .wedding {
   padding: 3rem;
 
@@ -119,6 +123,10 @@ const selected = ref(tabs[0].value)
     &-item {
       border: 0.1rem solid $grey-4;
       border-bottom: none;
+
+      &-text {
+        font-size: 2rem;
+      }
     }
     &-content {
       border: 0.1rem solid $grey-4;
