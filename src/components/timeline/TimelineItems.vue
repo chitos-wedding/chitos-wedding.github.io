@@ -21,7 +21,7 @@ const link = {
 const items = [
   {
     link,
-    text: '👶 1992.10 꼬마 신랑 서현 탄생\n👶 1994.05 꼬마 신부 승진 탄생 ',
+    text: '👶 1992.10 신랑 서현 탄생\n👶 1994.05 신부 승진 탄생 ',
     date: '1992년, 1994년 꼬꼬마 시절',
     image: 'childhood/01.jpg',
     images: ['childhood/01.jpg', 'childhood/02.jpg', 'childhood/03.jpg', 'childhood/04.png'],
@@ -42,12 +42,12 @@ const items = [
   },
   {
     link,
-    text: '👨‍🌾 둘만의 텃밭, 도시농부 도전기\n🎄 크리스마스 셀프 촬영',
+    text: '👨‍🌾 도시농부 도전기\n🎄 크리스마스 셀프 촬영',
     date: '2021 봄에서 겨울까지',
   },
   {
     link,
-    text: '💗 치토스 커플 1000일\n👩🏻‍🤝‍🧑🏻 전주 나들이 커플 한복\n',
+    text: '💗 치토스 커플 1000일\n🌸 전주 나들이\n',
     date: '2022년 봄에서 겨울까지',
   },
   {
