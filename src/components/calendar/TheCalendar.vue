@@ -61,10 +61,10 @@ const getRemainDayText = () => {
   }
   &-remain {
     padding: 1rem 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     :deep(span) {
       color: #d08c95;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
     }
   }
