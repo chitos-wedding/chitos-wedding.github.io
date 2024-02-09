@@ -113,6 +113,6 @@ const items = [
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 3rem;
+  padding: 2rem;
 }
 </style>
