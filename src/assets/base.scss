@@ -36,6 +36,10 @@ html {
   }
 }
 
+:root {
+  color-scheme: light only;
+}
+
 ::-webkit-scrollbar {
   overflow: visible;
   width: 0.5rem;
