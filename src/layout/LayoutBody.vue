@@ -75,7 +75,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   max-width: 36rem;
-  background-color: #fdfdfd;
+  background-color: #fdfdfd !important;
 
   .effect {
     position: absolute;
