@@ -134,7 +134,7 @@ const selected = ref(tabs[0].value)
       border-radius: 0 0 0.5rem 0.5rem;
 
       &-item {
-        height: 36rem;
+        height: 37rem;
       }
     }
   }
@@ -147,7 +147,7 @@ const selected = ref(tabs[0].value)
       border-radius: 0.8rem;
     }
     &-message {
-      padding: 1rem 0 2rem 0;
+      padding: 1rem 0 0 0;
       text-align: center;
       line-height: 2.25rem;
 
