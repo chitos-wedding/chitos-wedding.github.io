@@ -9,14 +9,14 @@
       <q-list v-for="(item, idx) in items" bordered class="style-button" :key="idx">
         <q-expansion-item :label="`${item.emoji} ${item.headerText}`">
           <q-card>
-            <q-card-section>
+            <q-card-section v-for="account in item.accounts" :key="account.name">
               <div class="account-info-item">
                 <div class="account-info-item-content">
                   <div class="account-info-item-content-text">
-                    <span>{{ item.headerText }}</span>
-                    <span class="account-info-item-content-text-name">{{ item.name }}</span>
+                    <span>{{ account.title }}</span>
+                    <span class="account-info-item-content-text-name">{{ account.name }}</span>
                   </div>
-                  <div class="account-info-item-content-kakao" @click="sendKakaoPay(item.kakaoPay)">
+                  <div v-if="account.kakaoPay" class="account-info-item-content-kakao" @click="sendKakaoPay(account.kakaoPay)">
                     <img
                       class="account-info-item-content-kakao-image"
                       :src="KakaoPay"
@@ -26,11 +26,11 @@
                 </div>
                 <div class="account-info-item-account">
                   <div class="account-info-item-account-text">
-                    <span>{{ item.bankName }}</span> <span>{{ item.accountNumber }}</span>
+                    <span>{{ account.bankName }}</span> <span>{{ account.accountNumber }}</span>
                   </div>
                   <div
                     class="account-info-item-account-clip style-button"
-                    @click="copyClipboard(item.accountNumber)"
+                    @click="copyClipboard(account.accountNumber)"
                   >
                     <q-icon name="content_copy" />
                     {{ '복사' }}
@@ -53,18 +53,49 @@ const items = [
   {
     emoji: '🤵',
     headerText: '신랑',
-    name: '백서현',
-    bankName: '농협',
-    accountNumber: '70912053535',
-    kakaoPay: 'https://qr.kakaopay.com/FUMieahFh',
+    accounts: [
+      {
+        title: '신랑',
+        name: '백서현',
+        bankName: '농협',
+        accountNumber: '709-12-053535',
+        kakaoPay: 'https://qr.kakaopay.com/FUMieahFh',
+      },
+      // {
+      //   title: '아버지',
+      //   name: '백승기',
+      //   bankName: '농협',
+      //   accountNumber: '70912053535',
+      //   // kakaoPay: 'https://qr.kakaopay.com/FUMieahFh',
+      // },
+      // {
+      //   title: '어머니',
+      //   name: '오미자',
+      //   bankName: '농협',
+      //   // accountNumber: '70912053535',
+      //   // kakaoPay: 'https://qr.kakaopay.com/FUMieahFh',
+      // },
+    ],
   },
   {
     emoji: '👰',
     headerText: '신부',
-    name: '하승진',
-    bankName: '국민',
-    accountNumber: '61580104176214',
-    kakaoPay: 'https://qr.kakaopay.com/Ej8UJiuLi',
+    accounts: [
+      {
+        title: '신부',
+        name: '하승진',
+        bankName: '국민',
+        accountNumber: '615801-04-176214',
+        kakaoPay: 'https://qr.kakaopay.com/Ej8UJiuLi',
+      },
+      {
+        title: '어머니',
+        name: '김정애',
+        bankName: '국민',
+        accountNumber: '615801-04-168442',
+        kakaoPay: 'https://qr.kakaopay.com/Ej8rkgraj',
+      },
+    ],
   },
 ]
 
@@ -79,8 +110,9 @@ const sendKakaoPay = (link) => {
   window.open(link, '_blank')
 }
 
-const copyClipboard = (text) => {
-  navigator.clipboard.writeText(text)
+const copyClipboard = (text = '') => {
+  const numberOfText = text.replace(/[^0-9]/g, '');
+  navigator.clipboard.writeText(numberOfText)
   quasar.notify({
     message: '복사되었습니다.',
     type: 'positive',
