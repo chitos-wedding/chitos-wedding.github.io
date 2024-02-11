@@ -45,7 +45,7 @@
 
       <q-card-actions class="check-action">
         <div class="check-action-button" @click="send">참석 의사 보내기</div>
-        <q-checkbox size="sm" v-model="notToday" label="오늘 하루 보지 않기" />
+        <q-checkbox size="sm" v-model="notToday" label="다시 보지 않기" />
         <div class="check-action-close" v-close-popup>[닫기]</div>
       </q-card-actions>
     </q-card>
@@ -74,6 +74,7 @@ const send = async () => {
   try {
     const data = model.value
     await addDoc(commentsRef, data)
+    notToday.value = true;
     close()
   } finally {
     q.loading.hide()
@@ -82,7 +83,7 @@ const send = async () => {
 
 const setCookie = () => {
   const d = new Date()
-  d.setTime(d.getTime() + 24 * 60 * 60 * 1000)
+  d.setTime(d.getTime() + 2 * 30 * 24 * 60 * 60 * 1000) // 두 달 보지 않도록 설정
   document.cookie = `not_today=true;expires=${d.toUTCString()};path=/`
 }
 
