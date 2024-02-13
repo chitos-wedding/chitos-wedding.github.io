@@ -30,11 +30,12 @@ const clickButton = () => {
     addressTitle: '인터불고 엑스코 그랑파티오홀',
     // buttonTitle: '청첩장 보기',
     content: {
-      title: '서현🩷승진 우리 결혼합니다.',
+      title: '서현❤승진 우리 결혼합니다.',
       // description: 'description 입력 하는 곳',
       imageUrl:
         // 'http://k.kakaocdn.net/dn/biNd2Q/bl4Eqfn7LWN/xgFs8nNKOTstHSX44Hpqyk/kakaolink40_original.jpg',
-        'http://k.kakaocdn.net/dn/WcA6z/bl4ExBD8OIu/F8XPwogt4m0G0o3RjtgtNk/kakaolink40_original.png',
+        // 'http://k.kakaocdn.net/dn/WcA6z/bl4ExBD8OIu/F8XPwogt4m0G0o3RjtgtNk/kakaolink40_original.png',
+        'http://k.kakaocdn.net/dn/qhgfS/bl4Ey9BuIqO/VnbVekBJCTOjUELlvWkQ51/kakaolink40_original.jpg',
       link: {
         mobileWebUrl: 'https://chitos-wedding.github.io',
         webUrl: 'https://chitos-wedding.github.io',
