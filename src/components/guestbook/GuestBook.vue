@@ -37,7 +37,7 @@ import { collection, query, orderBy, getDocs } from 'firebase/firestore'
 import { db } from '@/plugins/firebase'
 import GuestBookModal from './GuestBookModal.vue'
 import GuestBookDetailModal from './GuestBookDetailModal.vue'
-import defaultImage from '@/assets/img/default.png'
+import defaultImage from '@/assets/img/default.jpg'
 
 const commentsRef = collection(db, 'comments')
 const items = ref([])

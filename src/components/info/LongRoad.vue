@@ -5,7 +5,7 @@
 </template>
 <script setup>
 const getImage = (fileName) => {
-  return new URL(`/src/assets/img/${fileName || 'default.png'}`, import.meta.url).href
+  return new URL(`/src/assets/img/${fileName || 'default.jpg'}`, import.meta.url).href
 }
 </script>
 <style lang="scss" scoped>

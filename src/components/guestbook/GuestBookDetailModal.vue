@@ -17,7 +17,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import defaultImage from '@/assets/img/default.png'
+import defaultImage from '@/assets/img/default.jpg'
 
 const dialog = ref(false)
 const model = ref({})

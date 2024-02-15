@@ -51,7 +51,7 @@ const classes = computed(() => ({
 }))
 
 const getImage = (fileName) => {
-  return new URL(`/src/assets/img/${fileName || 'default.png'}`, import.meta.url).href
+  return new URL(`/src/assets/img/${fileName || 'default.jpg'}`, import.meta.url).href
 }
 
 const openModal = () => TimelineItemModalRef.value.open(item.value.images)
